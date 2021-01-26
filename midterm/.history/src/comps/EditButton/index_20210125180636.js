@@ -16,6 +16,8 @@ justify-content:center;
 align-items:center;
 font-size:13px;
 
+}
+
 `;
 
 const EditIcon = styled.div`
@@ -24,7 +26,7 @@ min-height: ${props=>props.height ? props.height : "18px"};
 max-width: ${props=>props.width ? props.width : "18px"};
 max-height: ${props=>props.height ? props.height : "18px"};
 background-image: url(${Edit});
-background-size: cover;
+background-size: fit;
 background-repeat: no-repeat;
 background-position: center;
 margin-right:8px;

@@ -16,6 +16,8 @@ justify-content:center;
 align-items:center;
 font-size:13px;
 
+}
+
 `;
 
 const EditIcon = styled.div`

@@ -4,7 +4,7 @@ import Home from '../../image/home.png';
 
 const Container = styled.div`
 min-width: ${props=>props.width ? props.width : "50%"};
-min-height: ${props=>props.height ? props.height : "96px"};
+min-height: ${props=>props.height ? props.height : "108px"};
 max-width: ${props=>props.width ? props.width : "100vw"};
 max-height: ${props=>props.height ? props.height : "auto"};
 display: flex;
@@ -13,7 +13,7 @@ align-items: center;
 color:${props=>props.bgcolor ? props.bgcolor : "#ffffff"};
 background-color: ${props=>props.bgcolor ? props.bgcolor : "#60BE68"};
 font-size: 1.8em;
-padding:24px 20px 0px 20px;
+padding:12px 20px 0px 20px;
 `;
 
 const HomeIcon = styled.div`

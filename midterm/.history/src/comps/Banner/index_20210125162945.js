@@ -4,16 +4,15 @@ import Home from '../../image/home.png';
 
 const Container = styled.div`
 min-width: ${props=>props.width ? props.width : "50%"};
-min-height: ${props=>props.height ? props.height : "96px"};
+min-height: ${props=>props.height ? props.height : "108px"};
 max-width: ${props=>props.width ? props.width : "100vw"};
 max-height: ${props=>props.height ? props.height : "auto"};
 display: flex;
 justify-content:space-between;
 align-items: center;
-color:${props=>props.bgcolor ? props.bgcolor : "#ffffff"};
-background-color: ${props=>props.bgcolor ? props.bgcolor : "#60BE68"};
+background-color: ${props=>props.height ? props.height : "#60BE68"};;
 font-size: 1.8em;
-padding:24px 20px 0px 20px;
+padding:12px 20px 0px 20px;
 `;
 
 const HomeIcon = styled.div`
@@ -27,8 +26,8 @@ background-repeat: no-repeat;
 background-position: center;
 `;
 
-const Banner = ({width, height,color, bgcolor, text}) => {
-    return <Container color={color} bgcolor={bgcolor} width={width} height={height}>
+const Banner = ({width, height, name, text}) => {
+    return <Container width={width} height={height}>
         {text}
         <HomeIcon />
     </Container>
@@ -37,8 +36,7 @@ const Banner = ({width, height,color, bgcolor, text}) => {
 Banner.defaultProps = {
     width: null,
     height: null,
-    color:null,
-    bgcolor: null,
+    name: "Name",
     text: "All Events"
 }
 

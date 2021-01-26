@@ -16,13 +16,15 @@ justify-content:center;
 align-items:center;
 font-size:13px;
 
+}
+
 `;
 
 const EditIcon = styled.div`
 min-width: ${props=>props.width ? props.width : "18px"};
-min-height: ${props=>props.height ? props.height : "18px"};
+min-height: ${props=>props.height ? props.height : "17px"};
 max-width: ${props=>props.width ? props.width : "18px"};
-max-height: ${props=>props.height ? props.height : "18px"};
+max-height: ${props=>props.height ? props.height : "17px"};
 background-image: url(${Edit});
 background-size: cover;
 background-repeat: no-repeat;

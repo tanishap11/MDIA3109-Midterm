@@ -4,7 +4,7 @@ import Home from '../../image/home.png';
 
 const Container = styled.div`
 min-width: ${props=>props.width ? props.width : "50%"};
-min-height: ${props=>props.height ? props.height : "96px"};
+min-height: ${props=>props.height ? props.height : "108px"};
 max-width: ${props=>props.width ? props.width : "100vw"};
 max-height: ${props=>props.height ? props.height : "auto"};
 display: flex;

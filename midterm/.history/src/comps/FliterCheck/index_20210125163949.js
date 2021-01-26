@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Home from '../../image/home.png';
+import Check from '../../image/check.png';
 
 const Container = styled.div`
 min-width: ${props=>props.width ? props.width : "50%"};
@@ -16,25 +16,25 @@ font-size: 1.8em;
 padding:24px 20px 0px 20px;
 `;
 
-const HomeIcon = styled.div`
+const FilterCheck = styled.div`
 min-width: ${props=>props.width ? props.width : "40px"};
 min-height: ${props=>props.height ? props.height : "38px"};
 max-width: ${props=>props.width ? props.width : "40px"};
 max-height: ${props=>props.height ? props.height : "38px"};
-background-image: url(${Home});
+background-image: url(${Check});
 background-size: cover;
 background-repeat: no-repeat;
 background-position: center;
 `;
 
-const Banner = ({width, height,color, bgcolor, text}) => {
+const FilterCheck = ({width, height,color, bgcolor, text}) => {
     return <Container color={color} bgcolor={bgcolor} width={width} height={height}>
         {text}
-        <HomeIcon />
+        <RoundBox />
     </Container>
 };
 
-Banner.defaultProps = {
+FilterCheck.defaultProps = {
     width: null,
     height: null,
     color:null,
@@ -42,4 +42,4 @@ Banner.defaultProps = {
     text: "All Events"
 }
 
-export default Banner;
+export default FilterCheck;
