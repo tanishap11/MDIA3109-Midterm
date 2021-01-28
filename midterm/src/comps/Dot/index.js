@@ -1,16 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const pending = "#0D71E7";
-const progress = "#FFC225";
-const completed = "#60BE68";
+export const Pending = "#0D71E7";
+export const Progress = "#FFC225";
+export const Completed = "#60BE68";
 
 const Container = styled.div`
 min-width: ${props=>props.width ? props.width : "12px"};
 min-height: ${props=>props.height ? props.height : "12px"};
 max-width: ${props=>props.width ? props.width : "12px"};
 max-height: ${props=>props.height ? props.height : "12px"};
-background-color: ${props=>props.bgcolor ? props.bgcolor : pending};
+background-color: ${props=>props.bgcolor ? props.bgcolor : Completed};
 border-radius: 50%;
 margin: 12px;
 `;
@@ -24,7 +24,7 @@ const Dot = ({width, height, bgcolor}) => {
 Dot.defaultProps = {
     width: null,
     height: null,
-    bgcolor: pending,
+    bgcolor: null,
 }
 
 export default Dot;
