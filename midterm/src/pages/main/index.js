@@ -31,6 +31,9 @@ const Main = () => {
   }
   
   return <div className="main">
+    <Banner />
+    <FilterButton />
+    <FilterButton name="Add" display="none" img=""/>
       <Upload />
       {/* <Avatar img={Spotty}/>
       <Avatar/> */}
@@ -40,11 +43,7 @@ const Main = () => {
       <Dot bgcolor={Completed}/> */}
       <Pro_box />
       <EditBtn />
-      <Banner />
       <FliterCheck />
-      <FilterButton />
-
-      <FilterButton bgcolor="white" border="2px solid #60BE68" color="#60BE68" img={ActiveFilterImage}/><br/>
       <Input /> <br/>
       <PendingButton 
           colorChange={ButtonColorSelect}
