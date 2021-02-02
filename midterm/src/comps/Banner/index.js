@@ -25,6 +25,7 @@ background-image: url(${Home});
 background-size: cover;
 background-repeat: no-repeat;
 background-position: center;
+cursor: pointer;
 `;
 
 const Banner = ({width, height,color, bgcolor, text}) => {
