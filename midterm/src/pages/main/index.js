@@ -17,7 +17,7 @@ import PendingButton from 'comps/ProgressBut/Pending';
 import ProgressButton from 'comps/ProgressBut/InProgress';
 import CompletedButton from 'comps/ProgressBut/Completed';
 import LandingPage from 'comps/ProgressBut/Test';
-
+// import Yellow from 'comps/ProgressBut/Test/Prog'
 import Input_box from 'comps/inputBox';
 
 // require('typeface-roboto');
@@ -64,6 +64,7 @@ const Main = () => {
           // bgcolor={clickedButton === "Pending" ? "red" : null}
         /> 
         <LandingPage></LandingPage>
+        {/* <Yellow></Yellow> */}
 
 
       <FilterButton bgcolor="white" border="2px solid #60BE68" color="#60BE68" img={ActiveFilterImage}/>
