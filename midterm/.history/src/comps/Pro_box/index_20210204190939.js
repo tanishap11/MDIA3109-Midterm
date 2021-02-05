@@ -143,7 +143,9 @@ const Pro_box = ({expand, onMenuExpand, width, height, name, bgcolor, text}) => 
         setExpanded(expand);
     },[expand])
 
-    return <Container width={width} height={height}>
+    return <Container onClick={()=> (
+            setExpanded(!expanded)
+        )} width={width} height={height}>
 
         <DropDownMenu onClick={()=> (
             setExpanded(!expanded)

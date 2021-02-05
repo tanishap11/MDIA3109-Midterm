@@ -143,7 +143,9 @@ const Pro_box = ({expand, onMenuExpand, width, height, name, bgcolor, text}) => 
         setExpanded(expand);
     },[expand])
 
-    return <Container width={width} height={height}>
+    return <Container onClick={()=> (
+            setExpanded(!expanded)
+        )} width={width} height={height}>
 
         <DropDownMenu onClick={()=> (
             setExpanded(!expanded)
@@ -158,7 +160,10 @@ const Pro_box = ({expand, onMenuExpand, width, height, name, bgcolor, text}) => 
 
         <Expand expanded={expanded}>
             <EditBox width={width} height={height} bgcolor={bgcolor}>
-                <EditIcon />
+                <div onClick={()=>{
+                onMenuExpand("Edit");
+                }}> <EditIcon />
+                </div>
                 <textBox>{text}</textBox>
             </EditBox>
             <Input_Box />

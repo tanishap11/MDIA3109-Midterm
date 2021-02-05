@@ -15,6 +15,7 @@ const Container = styled.div`
 const InputRow = styled.div`
     display:flex;
     justify-content:center;
+
     div{
         display:inline-flex;
         flex-direction:column;
@@ -24,13 +25,13 @@ const InputRow = styled.div`
 `;
 const InputRadio = styled.div`
     display:inline-flex !important;
-    flex-direction:row !important;
+    ?
     border: 1px solid green;
-    margin-left: 6px;
     div{
         display:flex;
         align-items:center;
-        margin: 0px 5px;
+        justify-content:center;
+        margin: 0px -32px;
     }
 `;
 
@@ -49,14 +50,6 @@ const InputForm = styled.input`
     min-height:25px;
     padding:5px;
 
-`;
-
-const InputRadioForm = styled.input`
-    min-width: ${props=>props.width ? props.width : "12px"};
-    min-height: ${props=>props.height ? props.height: "24px"};
-    overflow:hidden;
-    border: 1px solid #D3D9D9;
-    border-radius:5px;
 `;
 export const Pending = "#0D71E7";
 export const Progress = "#FFC225";
@@ -110,22 +103,20 @@ const Input_box = ({ width, height,text, bgcolor, bdcolor, ftcolor, onBtnSelect}
                 <InputLabel for="breed" >Breed</InputLabel>
                 <InputForm width="170px" height={height}  type='text' placeholder='breed' />
             </div>
-            <div>
-                <InputRadio>
-                    <div>
-                        <InputLabel for="size" >S</InputLabel>
-                        <InputRadioForm type="checkbox" value='small' onchange="checkboxChange()" />
-                    </div>
-                    <div>    
-                        <InputLabel for="size" >M</InputLabel>
-                        <InputRadioForm  type="checkbox" value='medium' onchange="checkboxChange()" />
-                    </div>
-                    <div>
-                        <InputLabel for="size" >L</InputLabel>
-                        <InputRadioForm type="checkbox" value='large' onchange="checkboxChange()"/>
-                    </div>
-                </InputRadio>
-            </div>
+            <InputRadio>
+                <div>
+                    <InputLabel for="size" >S</InputLabel>
+                    <InputForm type='radio' value='small' />
+                </div>
+                <div>    
+                    <InputLabel for="size" >M</InputLabel>
+                    <InputForm  type='radio' value='medium' />
+                </div>
+                <div>
+                    <InputLabel for="size" >L</InputLabel>
+                    <InputForm type='radio' value='large' />
+                </div>
+            </InputRadio>
         </InputRow>
 
         <InputRow>

@@ -4,8 +4,33 @@ import styled from 'styled-components';
 // import Avatar from 'comps/Avatar';
 import DropdownImage from '../../image/dropdown.png';
 import Oliver from '../../image/oliver.jpeg';
+import Spotty from '../../image/spotty.png';
 import Edit from '../../image/edit.png';
 import Input_Box from 'comps/inputBox';
+
+const FilterBtnBox = styled.div`
+min-width: ${props=>props.width ? props.width : "112px"};
+min-height: ${props=>props.height ? props.height : "48px"};
+max-width: ${props=>props.width ? props.width : "112px"};
+max-height: ${props=>props.height ? props.height : "48px"};
+border: ${props=>props.border ? props.border : "0px solid white"};
+display: flex;
+justify-content: center;
+align-items: center;
+background-color:${props=>props.bgcolor ? props.bgcolor : "#60BE68"};
+border-radius: 5px;
+color: ${props=>props.color ? props.color : "white"};
+font-size: 17px;
+cursor: pointer;
+`;
+
+const FilterImg = styled.img`
+display: ${props=>props.display ? props.display : "block"};
+position: relative;
+left: -10px;
+width: 22px;
+height: 22px;
+`;
 
 const EditBox = styled.div`
 min-width: ${props=>props.width ? props.width : "295px"};
@@ -75,6 +100,9 @@ const DropDownBox = styled.div`
     display:flex;
     justify-content: space-between;
     align-items: center;
+    div {
+        // margin:0 10px;
+    }
     background-color:#F4F6F6;
 `;
 export const Pending = "#0D71E7";
@@ -131,25 +159,32 @@ const Expand = styled.div`
         // padding:${props=>props.expanded ? "10px 15px" : "0px" };
         // margin:${props=>props.expanded ? "5px 0" : "0px" };
         cursor: pointer;
+        &:hover {
+            background-color:#DDD;
+        }
     }
     background-color:#F4F6F6;
 `;
 
-const Pro_box = ({expand, onMenuExpand, width, height, name, bgcolor, text}) => {
+const FilterBox = ({expand, onMenuExpand, width, height, name, bgcolor, text}) => {
 
-    const [expanded, setExpanded] = useState([]);
+    const [expanded, setExpanded] = useState(false);
 
     useEffect(()=>{
         setExpanded(expand);
     },[expand])
 
-    return <Container width={width} height={height}>
-
+    return <Container onClick={()=> (
+            setExpanded(!expanded)
+        )} width={width} height={height}>
+            <FilterBtnBox>
+                <FilterImg />
+            </FilterBtnBox>
         <DropDownMenu onClick={()=> (
             setExpanded(!expanded)
         )}>
             <DropDownBox expanded={expanded}>
-                <div><Dot /></div>
+                <div><Dot expanded={expanded} /></div>
                 <div><Avatar  expanded={expanded} /></div>
                 <div><NameBox expanded={expanded}>{name}</NameBox></div>
                 <div><DropdownIcon expanded={expanded} /></div>
@@ -158,15 +193,13 @@ const Pro_box = ({expand, onMenuExpand, width, height, name, bgcolor, text}) => 
 
         <Expand expanded={expanded}>
             <EditBox width={width} height={height} bgcolor={bgcolor}>
-                <EditIcon />
-                <textBox>{text}</textBox>
             </EditBox>
             <Input_Box />
         </Expand>
     </Container>
 };
 
-Pro_box.defaultProps = {
+FilterBox.defaultProps = {
     width: null,
     height: null,
     name: "Name",
@@ -174,4 +207,4 @@ Pro_box.defaultProps = {
     text: "Edit Profile"
 }
 
-export default Pro_box;
+export default FilterBox;

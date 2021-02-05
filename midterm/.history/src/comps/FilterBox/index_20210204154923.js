@@ -1,6 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import FilterCheck from 'comps/FliterCheck';
 
+const FilterBtnBox = styled.div`
+min-width: ${props=>props.width ? props.width : "112px"};
+min-height: ${props=>props.height ? props.height : "48px"};
+max-width: ${props=>props.width ? props.width : "112px"};
+max-height: ${props=>props.height ? props.height : "48px"};
+border: ${props=>props.border ? props.border : "0px solid white"};
+display: flex;
+justify-content: center;
+align-items: center;
+background-color:${props=>props.bgcolor ? props.bgcolor : "#60BE68"};
+border-radius: 5px;
+color: ${props=>props.color ? props.color : "white"};
+font-size: 17px;
+cursor: pointer;
+`;
+
+const FilterImg = styled.img`
+display: ${props=>props.display ? props.display : "block"};
+position: relative;
+left: -10px;
+width: 22px;
+height: 22px;
+`;
+
+export const Pending = "#0D71E7";
+export const Progress = "#FFC225";
+export const Completed = "#60BE68";
 
 const Container = styled.div`
     width: 325px;
@@ -15,6 +43,7 @@ const Container = styled.div`
 const InputRow = styled.div`
     display:flex;
     justify-content:center;
+
     div{
         display:inline-flex;
         flex-direction:column;
@@ -25,12 +54,14 @@ const InputRow = styled.div`
 const InputRadio = styled.div`
     display:inline-flex !important;
     flex-direction:row !important;
+    // justify-content:center;
+    // align-items:center;
     border: 1px solid green;
-    margin-left: 6px;
     div{
         display:flex;
         align-items:center;
-        margin: 0px 5px;
+        justify-content:center;
+        margin: 0px -32px;
     }
 `;
 
@@ -51,44 +82,20 @@ const InputForm = styled.input`
 
 `;
 
-const InputRadioForm = styled.input`
-    min-width: ${props=>props.width ? props.width : "12px"};
-    min-height: ${props=>props.height ? props.height: "24px"};
-    overflow:hidden;
-    border: 1px solid #D3D9D9;
-    border-radius:5px;
-`;
-export const Pending = "#0D71E7";
-export const Progress = "#FFC225";
-export const Completed = "#60BE68";
-
 const ButtonRow = styled.div`
+    // width:280px;
     display:flex;
+    // flex-direction:space-between;
     align-items:space-between;
     justify-contents:center;
 `;
-const ProcessBtn = styled.button`
-    min-width: ${props=>props.width ? props.width : "90px"};
-    min-height: ${props=>props.height ? props.height: "28px"};
-    border: ${props=>props.bdcolor ?  "1px solid"+props.bdcolor+";" : "none"};
-    border-radius:5px;
-    color:${props=>props.ftcolor ? props.ftcolor : "#F4F6F6" };
-    background-color:${props=>props.bgcolor ?  "#F4F6F6" : props.bgcolor};
-    :active, :focus{
-        background-color:${props=>props.bgcolor ? props.bgcolor : "#F4F6F6"};
-        color:${props=>props.ftcolor ? "#F4F6F6" : props.ftcolor};
-    }
-    margin:12px 5px 16px 5px;
-`;
 
-
-const Input_box = ({ width, height,text, bgcolor, bdcolor, ftcolor, onBtnSelect}) => {
+const FilterBox = ({expand, onMenuExpand, width, height, name, bgcolor, text}) => {
 
     return <Container width={width} height={height}>
         <InputRow>
             <div>
-                <InputLabel for="owner" >Name of Owner</InputLabel>
-                <InputForm width="170px" height={height}  type='text' placeholder='name' />
+                <FilterCheck> S </FilterCheck>
             </div>
             <div>
                 <InputLabel for="time" >Time</InputLabel>
@@ -110,22 +117,20 @@ const Input_box = ({ width, height,text, bgcolor, bdcolor, ftcolor, onBtnSelect}
                 <InputLabel for="breed" >Breed</InputLabel>
                 <InputForm width="170px" height={height}  type='text' placeholder='breed' />
             </div>
-            <div>
-                <InputRadio>
-                    <div>
-                        <InputLabel for="size" >S</InputLabel>
-                        <InputRadioForm type="checkbox" value='small' onchange="checkboxChange()" />
-                    </div>
-                    <div>    
-                        <InputLabel for="size" >M</InputLabel>
-                        <InputRadioForm  type="checkbox" value='medium' onchange="checkboxChange()" />
-                    </div>
-                    <div>
-                        <InputLabel for="size" >L</InputLabel>
-                        <InputRadioForm type="checkbox" value='large' onchange="checkboxChange()"/>
-                    </div>
-                </InputRadio>
-            </div>
+            <InputRadio>
+                <div>
+                    <InputLabel for="size" >S</InputLabel>
+                    <InputForm width="90px" height={height}  type='radio' value='small' />
+                </div>
+                <div>    
+                    <InputLabel for="size" >M</InputLabel>
+                    <InputForm width="90px" height={height}  type='radio' value='medium' />
+                </div>
+                <div>
+                    <InputLabel for="size" >L</InputLabel>
+                    <InputForm width="90px" height={height}  type='radio' value='large' />
+                </div>
+            </InputRadio>
         </InputRow>
 
         <InputRow>
@@ -155,19 +160,10 @@ const Input_box = ({ width, height,text, bgcolor, bdcolor, ftcolor, onBtnSelect}
             </div>
         </InputRow>
 
-        <ButtonRow>
-            <ProcessBtn onClick={()=>{
-                // onBtnSelect("bg");
-            }}
-             bgcolor={Pending} bdcolor={Pending} ftcolor={Pending} >Pending</ProcessBtn>
-            <ProcessBtn bgcolor={Progress} bdcolor={Progress} ftcolor={Progress} >In-Progress</ProcessBtn>
-            <ProcessBtn bgcolor={Completed} bdcolor={Completed} ftcolor={Completed} >Completed</ProcessBtn>
-        </ButtonRow>
-
     </Container>
 };
 
-Input_box.defaultProps = {
+FilterBox.defaultProps = {
     width: null,
     height: null,
     text:"label",
@@ -176,4 +172,4 @@ Input_box.defaultProps = {
     ftcolor:"#FFC225"
 }
 
-export default Input_box;
+export default FilterBox;
