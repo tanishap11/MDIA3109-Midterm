@@ -1,12 +1,24 @@
 import React, { Component } from 'react';
-// import firebase from 'firebase';
-// import { firebaseConfig } from './connection';
+import styled from 'styled-components';
 
-// Initialize Firebase
-// firebase.initializeApp(firebaseConfig);
-// let messageRef = firebase.database().ref('messages');
+const Container = styled.div`
+  .buttonthink {
+      padding: 10px 15px;
+      border-radius:5px;
+      min-height:26px;
+      min-width:105px;
+      max-width:105px;
+      color: white;
+      border: 2px solid #DAD;
+      background-color: #grey;
+      cursor: pointer;
+      margin:1%;
+  }
+`;
 
 class LandingPage extends Component {
+
+
 
   constructor(props) {
     super(props);
@@ -15,32 +27,27 @@ class LandingPage extends Component {
       name: '',
       message: '',
       list: [],
+
       font: "black",
-      color: "blue"
+      color: "#dedede"
+      
+
     }
   }
 
-//   onChange = () => {
-//     if (this.state.color == 'blue'){
-//       this.setState({ color: 'green' });
-//     }
-//     else {
-//       this.setState({ color: 'blue' });
-//     }
-//  }
 
  onChange = () => {
   var left = document.querySelectorAll(".left");
-  if (this.state.color === 'green'){
-    this.setState({ color: 'grey' });
+  if (this.state.color === '#dedede'){
+    this.setState({ color: '#DAD' });
   }
   else {
-    this.setState({ color: 'green' });
+    this.setState({ color: '#dedede' });
   }
 }
 
   render() {
-    return <div className='container'>
+    return <Container className='container'>
 
       {/* messages will be listed here */}
       <div className='messagesDiv' id='messagesDivId'>
@@ -61,10 +68,9 @@ class LandingPage extends Component {
 
       {/*think, delete options*/}
 
-      <button className='button think' style={{ backgroundColor: this.state.color }} onClick={this.onChange}>Think...</button>
+      <button className='buttonthink' style={{ backgroundColor: this.state.color,  }} onClick={this.onChange}>Pending</button>
 
-      <button className='button delete'>Delete last message</button>
-    </div>
+    </Container>
   }
 }
 
