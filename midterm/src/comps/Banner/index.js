@@ -30,7 +30,7 @@ background-position: center;
 const Banner = ({width, height,color, bgcolor, text}) => {
     return <Container color={color} bgcolor={bgcolor} width={width} height={height}>
         {text}
-        <HomeIcon />
+        {/* <HomeIcon /> */}
     </Container>
 };
 
