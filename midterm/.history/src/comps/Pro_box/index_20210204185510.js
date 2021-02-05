@@ -75,6 +75,9 @@ const DropDownBox = styled.div`
     display:flex;
     justify-content: space-between;
     align-items: center;
+    div {
+        // margin:0 10px;
+    }
     background-color:#F4F6F6;
 `;
 export const Pending = "#0D71E7";
@@ -143,13 +146,15 @@ const Pro_box = ({expand, onMenuExpand, width, height, name, bgcolor, text}) => 
         setExpanded(expand);
     },[expand])
 
-    return <Container width={width} height={height}>
+    return <Container onClick={()=> (
+            setExpanded(prev => !prev)
+        )} width={width} height={height}>
 
         <DropDownMenu onClick={()=> (
             setExpanded(!expanded)
         )}>
             <DropDownBox expanded={expanded}>
-                <div><Dot /></div>
+                <div><Dot expanded={expanded} /></div>
                 <div><Avatar  expanded={expanded} /></div>
                 <div><NameBox expanded={expanded}>{name}</NameBox></div>
                 <div><DropdownIcon expanded={expanded} /></div>
@@ -158,7 +163,10 @@ const Pro_box = ({expand, onMenuExpand, width, height, name, bgcolor, text}) => 
 
         <Expand expanded={expanded}>
             <EditBox width={width} height={height} bgcolor={bgcolor}>
-                <EditIcon />
+                <div onClick={()=>{
+                onMenuExpand("Edit");
+                }}> <EditIcon />
+                </div>
                 <textBox>{text}</textBox>
             </EditBox>
             <Input_Box />

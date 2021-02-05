@@ -55,8 +55,6 @@ const InputRadioForm = styled.input`
     min-width: ${props=>props.width ? props.width : "12px"};
     min-height: ${props=>props.height ? props.height: "24px"};
     overflow:hidden;
-    border: 1px solid #D3D9D9;
-    border-radius:5px;
 `;
 export const Pending = "#0D71E7";
 export const Progress = "#FFC225";

@@ -9,7 +9,7 @@ import {Pending, Progress, Completed} from 'comps/Dot';
 import EditBtn from 'comps/EditButton';
 import Banner from 'comps/Banner';
 import FliterCheck from 'comps/FliterCheck';
-import FilterButton from 'comps/FilterButton';
+import FilterButton from 'comps/Filter Button';
 import ActiveFilterImage from '../../image/filter-active.png';
 
 import Input from 'comps/Input';

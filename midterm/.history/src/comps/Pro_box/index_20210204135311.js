@@ -4,6 +4,7 @@ import styled from 'styled-components';
 // import Avatar from 'comps/Avatar';
 import DropdownImage from '../../image/dropdown.png';
 import Oliver from '../../image/oliver.jpeg';
+import Spotty from '../../image/spotty.png';
 import Edit from '../../image/edit.png';
 import Input_Box from 'comps/inputBox';
 
@@ -75,6 +76,9 @@ const DropDownBox = styled.div`
     display:flex;
     justify-content: space-between;
     align-items: center;
+    div {
+        // margin:0 10px;
+    }
     background-color:#F4F6F6;
 `;
 export const Pending = "#0D71E7";
@@ -131,6 +135,9 @@ const Expand = styled.div`
         // padding:${props=>props.expanded ? "10px 15px" : "0px" };
         // margin:${props=>props.expanded ? "5px 0" : "0px" };
         cursor: pointer;
+        &:hover {
+            background-color:#DDD;
+        }
     }
     background-color:#F4F6F6;
 `;
@@ -143,13 +150,15 @@ const Pro_box = ({expand, onMenuExpand, width, height, name, bgcolor, text}) => 
         setExpanded(expand);
     },[expand])
 
-    return <Container width={width} height={height}>
+    return <Container onClick={()=> (
+            setExpanded(!expanded)
+        )} width={width} height={height}>
 
         <DropDownMenu onClick={()=> (
             setExpanded(!expanded)
         )}>
             <DropDownBox expanded={expanded}>
-                <div><Dot /></div>
+                <div><Dot expanded={expanded} /></div>
                 <div><Avatar  expanded={expanded} /></div>
                 <div><NameBox expanded={expanded}>{name}</NameBox></div>
                 <div><DropdownIcon expanded={expanded} /></div>
@@ -158,7 +167,9 @@ const Pro_box = ({expand, onMenuExpand, width, height, name, bgcolor, text}) => 
 
         <Expand expanded={expanded}>
             <EditBox width={width} height={height} bgcolor={bgcolor}>
-                <EditIcon />
+                <EditIcon onClick={()=>{
+                onMenuSelect("bg");
+            }} />
                 <textBox>{text}</textBox>
             </EditBox>
             <Input_Box />
@@ -170,7 +181,7 @@ Pro_box.defaultProps = {
     width: null,
     height: null,
     name: "Name",
-    expand: false,
+    expand: "",
     text: "Edit Profile"
 }
 

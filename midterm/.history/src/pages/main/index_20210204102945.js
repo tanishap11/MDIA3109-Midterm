@@ -9,7 +9,7 @@ import {Pending, Progress, Completed} from 'comps/Dot';
 import EditBtn from 'comps/EditButton';
 import Banner from 'comps/Banner';
 import FliterCheck from 'comps/FliterCheck';
-import FilterButton from 'comps/FilterButton';
+import FilterButton from 'comps/Filter Button';
 import ActiveFilterImage from '../../image/filter-active.png';
 
 import Input from 'comps/Input';
@@ -19,7 +19,7 @@ import CompletedButton from 'comps/ProgressBut/Completed';
 import LandingPage from 'comps/ProgressBut/Test';
 
 import Input_box from 'comps/inputBox';
-import FilterBox from 'comps/FilterBox';
+
 // require('typeface-roboto');
 
 const Main = () => {
@@ -59,8 +59,6 @@ const Main = () => {
       <FilterButton bgcolor="white" border="2px solid #60BE68" color="#60BE68" img={ActiveFilterImage}/>
       <Input_box />
 
-      
-      <FilterBox />
   </div>
 
 }

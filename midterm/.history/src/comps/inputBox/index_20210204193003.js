@@ -53,8 +53,9 @@ const InputForm = styled.input`
 
 const InputRadioForm = styled.input`
     min-width: ${props=>props.width ? props.width : "12px"};
-    min-height: ${props=>props.height ? props.height: "24px"};
+    min-height: ${props=>props.height ? props.height: "28px"};
     overflow:hidden;
+    font-size:13px;
     border: 1px solid #D3D9D9;
     border-radius:5px;
 `;
@@ -114,15 +115,15 @@ const Input_box = ({ width, height,text, bgcolor, bdcolor, ftcolor, onBtnSelect}
                 <InputRadio>
                     <div>
                         <InputLabel for="size" >S</InputLabel>
-                        <InputRadioForm type="checkbox" value='small' onchange="checkboxChange()" />
+                        <InputRadioForm type='radio' value='small' />
                     </div>
                     <div>    
                         <InputLabel for="size" >M</InputLabel>
-                        <InputRadioForm  type="checkbox" value='medium' onchange="checkboxChange()" />
+                        <InputRadioForm  type='radio' value='medium' />
                     </div>
                     <div>
                         <InputLabel for="size" >L</InputLabel>
-                        <InputRadioForm type="checkbox" value='large' onchange="checkboxChange()"/>
+                        <InputRadioForm type='radio' value='large' />
                     </div>
                 </InputRadio>
             </div>

@@ -1,37 +1,29 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-// import Dot from 'comps/Dot';
-// import Avatar from 'comps/Avatar';
-import DropdownImage from '../../image/dropdown.png';
-import Oliver from '../../image/oliver.jpeg';
-import Edit from '../../image/edit.png';
-import Input_Box from 'comps/inputBox';
+import FilterImage from '../../image/filter.png';
 
-const EditBox = styled.div`
-min-width: ${props=>props.width ? props.width : "295px"};
-min-height: ${props=>props.height ? props.height : "36px"};
-max-width: ${props=>props.width ? props.width : "295px"};
-max-height: ${props=>props.height ? props.height : "36px"};
-background-color: "#ffffff";
-border-radius:5px;
-border:black solid 1px;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:13px;
-
+const ButtonCont = styled.div`
+min-width: ${props=>props.width ? props.width : "112px"};
+min-height: ${props=>props.height ? props.height : "48px"};
+max-width: ${props=>props.width ? props.width : "112px"};
+max-height: ${props=>props.height ? props.height : "48px"};
+border: ${props=>props.border ? props.border : "0px solid white"};
+display: flex;
+justify-content: center;
+align-items: center;
+background-color:${props=>props.bgcolor ? props.bgcolor : "#60BE68"};
+border-radius: 5px;
+color: ${props=>props.color ? props.color : "white"};
+font-size: 17px;
+cursor: pointer;
 `;
 
-const EditIcon = styled.div`
-min-width: ${props=>props.width ? props.width : "18px"};
-min-height: ${props=>props.height ? props.height : "18px"};
-max-width: ${props=>props.width ? props.width : "18px"};
-max-height: ${props=>props.height ? props.height : "18px"};
-background-image: url(${Edit});
-background-size: cover;
-background-repeat: no-repeat;
-background-position: center;
-margin-right:8px;
+const FilterImg = styled.img`
+display: ${props=>props.display ? props.display : "block"};
+position: relative;
+left: -10px;
+width: 22px;
+height: 22px;
 `;
 
 const textBox = styled.div``;
@@ -75,6 +67,9 @@ const DropDownBox = styled.div`
     display:flex;
     justify-content: space-between;
     align-items: center;
+    div {
+        // margin:0 10px;
+    }
     background-color:#F4F6F6;
 `;
 export const Pending = "#0D71E7";
@@ -131,25 +126,61 @@ const Expand = styled.div`
         // padding:${props=>props.expanded ? "10px 15px" : "0px" };
         // margin:${props=>props.expanded ? "5px 0" : "0px" };
         cursor: pointer;
+        &:hover {
+            background-color:#DDD;
+        }
     }
     background-color:#F4F6F6;
 `;
+const EditBox = styled.div`
+min-width: ${props=>props.width ? props.width : "295px"};
+min-height: ${props=>props.height ? props.height : "36px"};
+max-width: ${props=>props.width ? props.width : "295px"};
+max-height: ${props=>props.height ? props.height : "36px"};
+background-color: "#ffffff";
+border-radius:5px;
+border:black solid 1px;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:13px;
 
-const Pro_box = ({expand, onMenuExpand, width, height, name, bgcolor, text}) => {
+`;
 
-    const [expanded, setExpanded] = useState([]);
+const EditIcon = styled.div`
+min-width: ${props=>props.width ? props.width : "18px"};
+min-height: ${props=>props.height ? props.height : "18px"};
+max-width: ${props=>props.width ? props.width : "18px"};
+max-height: ${props=>props.height ? props.height : "18px"};
+background-image: url(${Edit});
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+margin-right:8px;
+`;
+
+
+const FilterButton = ({width, height, border, bgcolor, color, img, name, display, expand, width, height, name, bgcolor}) => {
+    
+    const [expanded, setExpanded] = useState(false);
 
     useEffect(()=>{
         setExpanded(expand);
     },[expand])
 
-    return <Container width={width} height={height}>
+    return <Container onClick={()=> (
+            setExpanded(!expanded)
+        )} width={width} height={height} border={border} bgcolor={bgcolor} color={color}>
+             <FilterImg src={img} display={display}/>
 
+            <FilterBtnBox>
+                <FilterImg />
+            </FilterBtnBox>
         <DropDownMenu onClick={()=> (
             setExpanded(!expanded)
         )}>
             <DropDownBox expanded={expanded}>
-                <div><Dot /></div>
+                <div><Dot expanded={expanded} /></div>
                 <div><Avatar  expanded={expanded} /></div>
                 <div><NameBox expanded={expanded}>{name}</NameBox></div>
                 <div><DropdownIcon expanded={expanded} /></div>
@@ -157,21 +188,22 @@ const Pro_box = ({expand, onMenuExpand, width, height, name, bgcolor, text}) => 
         </DropDownMenu>
 
         <Expand expanded={expanded}>
-            <EditBox width={width} height={height} bgcolor={bgcolor}>
-                <EditIcon />
-                <textBox>{text}</textBox>
-            </EditBox>
-            <Input_Box />
+            
         </Expand>
     </Container>
 };
 
-Pro_box.defaultProps = {
+
+
+FilterButton.defaultProps = {
     width: null,
     height: null,
-    name: "Name",
-    expand: false,
-    text: "Edit Profile"
+    border: null,
+    bgcolor: null,
+    color: null,
+    img: FilterImage,
+    name:"Filters",
+    display:null
 }
 
-export default Pro_box;
+export default FilterButton;
