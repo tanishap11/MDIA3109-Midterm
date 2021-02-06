@@ -40,7 +40,7 @@ const Main = () => {
     
     <div className="topbut">
       <FilterButton />
-      <FilterButton name="Add" display="none" img=""/>
+      {/* <FilterButton name="Add" display="none" img=""/> */}
     </div>
     <Pro_box />
     <Pro_box />
