@@ -35,13 +35,17 @@ background-position: center;
 margin-right:8px;
 `;
 
-const textBox = styled.div``;
+const textBox = styled.div`
+`;
 
 const Container = styled.div`
     display:inline-flex;
     flex-direction:column;
-    border: solid 1px red;
     background-color:#F4F6F6;
+    border-radius:8px;
+    margin-top:15px;
+    // box-shadow: 0 0 20px #d1d1d1;
+    box-shadow: 0 4px 15px #d1d1d1;
 `;
 
 const DropDownMenu  = styled.div`
@@ -73,11 +77,12 @@ const DropdownIcon = styled.div`
 const DropDownBox = styled.div`
     width:100%;
     padding:10px;
+    border-radius:8px;
     display:flex;
     justify-content: space-between;
     align-items: center;
     div {
-        // margin:0 10px;
+        // margin: 10px 10px;
     }
     background-color:#F4F6F6;
 `;
@@ -150,9 +155,7 @@ const Pro_box = ({expand, onMenuExpand, width, height, name, bgcolor, text}) => 
         setExpanded(expand);
     },[expand])
 
-    return <Container onClick={()=> (
-            setExpanded(!expanded)
-        )} width={width} height={height}>
+    return <Container width={width} height={height}>
 
         <DropDownMenu onClick={()=> (
             setExpanded(!expanded)
