@@ -23,6 +23,7 @@ import BlueBut from 'comps/ProgressBut/Test/Pend';
 import Input_box from 'comps/inputBox';
 
 import StatusButton from 'comps/StatusButton';
+import AddButton from 'comps/AddButton';
 
 require('typeface-roboto');
 
@@ -40,6 +41,7 @@ const Main = () => {
     <div className="content">
     <div className="topbut">
       <FilterButton />
+      <AddButton />
       {/* <FilterButton name="Add" display="none" img=""/> */}
     </div>
     <Pro_box />
