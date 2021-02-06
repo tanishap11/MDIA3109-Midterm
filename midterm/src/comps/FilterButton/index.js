@@ -24,7 +24,7 @@ const Filterbtn = styled.button`
     font-size: 17px;
     font-weight:500;
     cursor: pointer;
-    margin-bottom:12px;
+    margin:12px;
 `;
 
 const FilterImg = styled.div`

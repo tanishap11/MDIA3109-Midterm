@@ -81,34 +81,50 @@ const ProcessBtn = styled.button`
     margin:12px 5px 16px 5px;
 `;
 
+const fakedb = [
+    {
+        name: "Tanisha Patel",
+        time: "01/02/2021",
+        email: "tanishapatel@outlook.com",
+        phone: "6046056789",
+        breed: "Beagle",
+        size: "M",
+        gender: "Male",
+        med: "N",
+        progress: "completed"
+    }
+]
 
-const Input_box = ({ width, height,text, bgcolor, bdcolor, ftcolor, onBtnSelect}) => {
 
-    return <Container width={width} height={height}>
+
+const Input_box = ({ width, height,text, bgcolor, bdcolor, ftcolor, onBtnSelect, msgs}) => {
+
+    return <div>
+        {msgs.map(o=><Container width={width} height={height}>
         <InputRow>
             <div>
-                <InputLabel for="owner" >Name of Owner</InputLabel>
-                <InputForm width="170px" height={height}  type='text' placeholder='name' />
+            <InputLabel for="owner" >Name of Owner</InputLabel>
+            <InputForm width="170px" height={height}  type='text' value={o.name} />
             </div>
             <div>
                 <InputLabel for="time" >Time</InputLabel>
-                <InputForm width="90px" height={height}  type='text' placeholder='time' />
+                <InputForm width="90px" height={height}  type='text' value={o.time} />
             </div>
         </InputRow>
         <InputRow>
             <div>
                 <InputLabel for="email" >Email</InputLabel>
-                <InputForm width="170px" height={height}  type='text' placeholder='email' />
+                <InputForm width="170px" height={height}  type='text' value={o.email} />
             </div>
             <div>
                 <InputLabel for="phone" >Phone Number</InputLabel>
-                <InputForm width="90px" height={height}  type='text' placeholder='phone number' />
+                <InputForm width="90px" height={height}  type='text' value={o.phone} />
             </div>
         </InputRow>
         <InputRow>
             <div>
                 <InputLabel for="breed" >Breed</InputLabel>
-                <InputForm width="170px" height={height}  type='text' placeholder='breed' />
+                <InputForm width="170px" height={height}  type='text' value={o.breed} />
             </div>
             <div>
                 <InputRadio>
@@ -131,27 +147,11 @@ const Input_box = ({ width, height,text, bgcolor, bdcolor, ftcolor, onBtnSelect}
         <InputRow>
             <div>
                 <InputLabel for="gender" >Gender</InputLabel>
-                <InputForm width="170px" height={height}  type='text' placeholder='gender' />
+                <InputForm width="170px" height={height}  type='text' value={o.gender} />
             </div>
             <div>
                 <InputLabel for="medication" >Medication</InputLabel>
-                <InputForm width="90px" height={height}  type='text' placeholder='Y/N' />
-            </div>
-        </InputRow>
-        <InputRow>
-            <div>
-                <InputLabel for="preference" >Accompany Preference</InputLabel>
-                <InputForm width="170px" height={height}  type='text' placeholder='group/alone' />
-            </div>
-            <div>
-                <InputLabel for="allergy" >Allergy</InputLabel>
-                <InputForm width="90px" height={height}  type='text' placeholder='Y/N' />
-            </div>
-        </InputRow>
-        <InputRow>
-            <div>
-                <InputLabel for="comments" >Comments</InputLabel>
-                <InputForm width="280px" height="auto"  type='text' placeholder='memo' />
+                <InputForm width="90px" height={height}  type='text' value={o.med} />
             </div>
         </InputRow>
 
@@ -164,7 +164,8 @@ const Input_box = ({ width, height,text, bgcolor, bdcolor, ftcolor, onBtnSelect}
             <ProcessBtn bgcolor={Completed} bdcolor={Completed} ftcolor={Completed} >Completed</ProcessBtn>
         </ButtonRow>
 
-    </Container>
+    </Container>)}
+    </div>
 };
 
 Input_box.defaultProps = {
@@ -173,7 +174,8 @@ Input_box.defaultProps = {
     text:"label",
     bgcolor:null,
     bdcolor:null,
-    ftcolor:"#FFC225"
+    ftcolor:"#FFC225",
+    msgs: fakedb
 }
 
 export default Input_box;

@@ -165,10 +165,6 @@ const Pro_box = ({expand, onMenuExpand, width, height, name, bgcolor, text}) => 
         </DropDownMenu>
 
         <Expand expanded={expanded}>
-            <EditBox width={width} height={height} bgcolor={bgcolor}>
-                <EditIcon />
-                <textBox>{text}</textBox>
-            </EditBox>
             <Input_Box />
         </Expand>
     </Container>

@@ -37,59 +37,14 @@ const Main = () => {
   
   return <div className="main">
     <Banner />
-    
+    <div className="content">
     <div className="topbut">
       <FilterButton />
       {/* <FilterButton name="Add" display="none" img=""/> */}
     </div>
     <Pro_box />
     <Pro_box />
-    <Pro_box />
-    <Pro_box />
-    <Pro_box />
-    <Pro_box />
-    <Pro_box />
-    <Pro_box />
-
-
-      {/* <Upload /> */}
-      {/* <Avatar img={Spotty}/>
-      <Avatar/> */}
-      {/* <Dot />
-      <Dot bgcolor={Pending}/>
-      <Dot bgcolor={Progress}/>
-      <Dot bgcolor={Completed}/> */}
-      {/* <Pro_box />
-      <EditBtn /> */}
-      {/* <FliterCheck />
-    <FilterButton />
-      <Upload />
-      <Pro_box />
-      <EditBtn />
-      <FliterCheck />
-      <Input /> <br/>
-      <Input_box />
-      <StatusButton 
-        name = "pending" 
-        text = "Pending"
-        bgcolor = {clickedButton === "pending" ? "#0D71E7" : "white"}
-        color = {clickedButton === "pending" ? "white" : "#0D71E7"}
-        onButtonSelect={ButtonColorSelect}
-      /> */}
-      {/* <StatusButton 
-        name = "completed" 
-        text = "Completed"
-        bgcolor = {clickedButton === "completed" ? "#60BE68" : "white"}
-        color = {clickedButton === "completed" ? "white" : "#60BE68"}
-        onButtonSelect={ButtonColorSelect}
-      />
-      <StatusButton 
-        name = "inprogress" 
-        text = "In-Progress"
-        bgcolor = {clickedButton === "inprogress" ? "#FFC225" : "white"}
-        color = {clickedButton === "inprogress" ? "white" : "#FFC225"}
-        onButtonSelect={ButtonColorSelect}
-      /> */}
+    </div>
   </div>
 
 }
