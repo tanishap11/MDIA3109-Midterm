@@ -149,7 +149,7 @@ const FilterBox = ({click, onMenuExpand, width, height, name, bgcolor, text}) =>
                 <span className="checks">
                     <FilterCheckbox onChange={(e)=>{
                         setCheck8(e.target.checked);
-                    }} checked={check8} /> Shih Tzu
+                    }} checked={check8} /> Other
                 </span>
             </div>
         </InputRow>
