@@ -9,7 +9,7 @@ import {Pending, Progress, Completed} from 'comps/Dot';
 import EditBtn from 'comps/EditButton';
 import Banner from 'comps/Banner';
 import FliterCheck from 'comps/FliterCheck';
-import FilterButton from 'comps/Filter Button';
+import FilterButton from 'comps/FilterButton';
 import ActiveFilterImage from '../../image/filter-active.png';
 
 import Input from 'comps/Input';
@@ -21,9 +21,11 @@ import YellowBut from 'comps/ProgressBut/Test/Prog';
 import GreenBut from 'comps/ProgressBut/Test/Com';
 import BlueBut from 'comps/ProgressBut/Test/Pend';
 import Input_box from 'comps/inputBox';
+
 import StatusButton from 'comps/StatusButton';
 
 require('typeface-roboto');
+
 
 const Main = () => {
 
@@ -60,8 +62,12 @@ const Main = () => {
       {/* <Pro_box />
       <EditBtn /> */}
       {/* <FliterCheck />
+    <FilterButton />
+      <Upload />
+      <Pro_box />
+      <EditBtn />
+      <FliterCheck />
       <Input /> <br/>
-      <FilterButton bgcolor="white" border="2px solid #60BE68" color="#60BE68" img={ActiveFilterImage}/>
       <Input_box />
       <StatusButton 
         name = "pending" 
