@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import Home from '../../image/home.png';
 
 const Container = styled.div`
-min-width: ${props=>props.width ? props.width : "50%"};
+min-width: ${props=>props.width ? props.width : "100%"};
 min-height: ${props=>props.height ? props.height : "96px"};
-max-width: ${props=>props.width ? props.width : "100vw"};
+max-width: ${props=>props.width ? props.width : "100%"};
 max-height: ${props=>props.height ? props.height : "auto"};
 display: flex;
 justify-content:space-between;
@@ -14,6 +14,9 @@ color:${props=>props.bgcolor ? props.bgcolor : "#ffffff"};
 background-color: ${props=>props.bgcolor ? props.bgcolor : "#60BE68"};
 font-size: 1.8em;
 padding:24px 20px 0px 20px;
+div {
+    margin-left: 30px;
+}
 `;
 
 const HomeIcon = styled.div`
@@ -25,12 +28,15 @@ background-image: url(${Home});
 background-size: cover;
 background-repeat: no-repeat;
 background-position: center;
+cursor: pointer;
 `;
 
 const Banner = ({width, height,color, bgcolor, text}) => {
     return <Container color={color} bgcolor={bgcolor} width={width} height={height}>
+        <div>
         {text}
-        <HomeIcon />
+        </div>
+        {/* <HomeIcon /> */}
     </Container>
 };
 
