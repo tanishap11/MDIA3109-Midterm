@@ -104,27 +104,27 @@ const Input_box = ({ width, height,text, bgcolor, bdcolor, ftcolor, onBtnSelect,
         <InputRow>
             <div>
             <InputLabel for="owner" >Name of Owner</InputLabel>
-            <InputForm width="170px" height={height}  type='text' value={o.name} />
+            <InputForm width="170px" height={height}  type='text' defaultValue={o.name} />
             </div>
             <div>
                 <InputLabel for="time" >Time</InputLabel>
-                <InputForm width="90px" height={height}  type='text' value={o.time} />
+                <InputForm width="90px" height={height}  type='text' defaultValue={o.time} />
             </div>
         </InputRow>
         <InputRow>
             <div>
                 <InputLabel for="email" >Email</InputLabel>
-                <InputForm width="170px" height={height}  type='text' value={o.email} />
+                <InputForm width="170px" height={height}  type='text' defaultValue={o.email} />
             </div>
             <div>
                 <InputLabel for="phone" >Phone Number</InputLabel>
-                <InputForm width="90px" height={height}  type='text' value={o.phone} />
+                <InputForm width="90px" height={height}  type='text' defaultValue={o.phone} />
             </div>
         </InputRow>
         <InputRow>
             <div>
                 <InputLabel for="breed" >Breed</InputLabel>
-                <InputForm width="170px" height={height}  type='text' value={o.breed} />
+                <InputForm width="170px" height={height}  type='text' defaultValue={o.breed} />
             </div>
             <div>
                 <InputRadio>
@@ -147,11 +147,11 @@ const Input_box = ({ width, height,text, bgcolor, bdcolor, ftcolor, onBtnSelect,
         <InputRow>
             <div>
                 <InputLabel for="gender" >Gender</InputLabel>
-                <InputForm width="170px" height={height}  type='text' value={o.gender} />
+                <InputForm width="170px" height={height}  type='text' defaultValue={o.gender} />
             </div>
             <div>
                 <InputLabel for="medication" >Medication</InputLabel>
-                <InputForm width="90px" height={height}  type='text' value={o.med} />
+                <InputForm width="90px" height={height}  type='text' defaultValue={o.med} />
             </div>
         </InputRow>
 
