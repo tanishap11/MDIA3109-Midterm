@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import FilterImage from '../../image/filter.png';
-import FilterBox from 'comps/FilterBox';
+import AddBox from 'comps/AddBox';
 import ActiveFilterImage from '../../image/filter-active.png';
 
 const ButtonCnt = styled.div`
@@ -50,13 +50,14 @@ const Expand = styled.div`
     opacity:${props=>props.expanded ? 1 : 0 };
     transition:opacity 0.5s;
     flex-direction:column;
-    justify-content: center;
-    align-items:center;
+    justify-content: left;
+    align-items:left;
     margin-top:12x;
     background-color:#F4F6F6;
+    
 `;
 
-const FilterButton = ({width, height, img, display, expand}) => {
+const AddButton = ({width, height, img, display, expand}) => {
     
     const [expanded, setExpanded] = useState(false);
 
@@ -68,14 +69,13 @@ const FilterButton = ({width, height, img, display, expand}) => {
             <Filterbtn onClick={()=> (
             setExpanded(!expanded)
         )} width={width} height={height} expanded={expanded}>
-                <FilterImg expanded={expanded} src={img} display={display}/>
-                <div>Filter</div>
+                <div>Add</div>
             </Filterbtn>
              
 
             <Expand expanded={expanded}>
                 {/* <Container> */}
-                    <FilterBox />
+                    <AddBox />
                 {/* </Container> */}
             </Expand>
     </ButtonCnt>
@@ -83,15 +83,15 @@ const FilterButton = ({width, height, img, display, expand}) => {
 
 
 
-FilterButton.defaultProps = {
+AddButton.defaultProps = {
     width: null,
     height: null,
     border: null,
     bgcolor: null,
     color: null,
     img: null,
-    name:"Filters",
+    name:"Add",
     display:null
 }
 
-export default FilterButton;
+export default AddButton;

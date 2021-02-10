@@ -23,6 +23,7 @@ import BlueBut from 'comps/ProgressBut/Test/Pend';
 import Input_box from 'comps/inputBox';
 
 import StatusButton from 'comps/StatusButton';
+import AddButton from 'comps/AddButton';
 
 require('typeface-roboto');
 
@@ -31,15 +32,21 @@ const Main = () => {
 
   const [clickedButton, setClickedButton] = useState(null);
 
-  const ButtonColorSelect = (name) =>{
-    setClickedButton(name);
+  const ButtonColorSelect = (name, check1, check2, check3, check4, check5, check6, check7, check8, check9, check10) =>{
+    setClickedButton(name, check1, check2, check3, check4, check5, check6, check7, check8, check9, check10);
+    console.log(check1, check2, check3, check4, check5, check6, check7, check8, check9, check10)
   }
   
+  // const HandleApply = (check1, check2, check3, check4, check5, check6, check7, check8, check9, check10) => {
+  //   console.log(check1, check2, check3, check4, check5, check6, check7, check8, check9, check10)
+  // }
   return <div className="main">
     <Banner />
     <div className="content">
     <div className="topbut">
-      <FilterButton />
+      <FilterButton clickedButton={ButtonColorSelect}/>
+      <AddButton />
+      {/* <FilterButton name="Add" display="none" img=""/> */}
     </div>
     <Pro_box />
     <Pro_box />

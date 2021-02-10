@@ -58,9 +58,9 @@ const ApplyButton = styled.button`
         background-color: ${props=>props.bgcolor ? "#D3D9D9" : "#60BE68"};
     }
 `;
-const FilterBox = ({clickedButton, onMenuExpand, width, height, name, bgcolor, text}) => {
+const FilterBox = ({click, onMenuExpand, width, height, name, bgcolor, text}) => {
     
-    // const [clickedButton, setClicked] = useState(null);
+    const [clickedButton, setClicked] = useState(null);
 
     const [check1, setCheck1] = useState(false);
     const [check2, setCheck2] = useState(false);
@@ -175,21 +175,20 @@ const FilterBox = ({clickedButton, onMenuExpand, width, height, name, bgcolor, t
             </div>
         </InputRow>
         <div className="button">
-            <ApplyButton onClick={()=>{
-                clickedButton(check1, check2, check3, check4, check5, check6, check7, check8, check9, check10);
+            <ApplyButton onClick={(e)=>{
+                clickedButton();
             }} width={width} height={height} bgcolor={bgcolor}>Apply</ApplyButton>
         </div>
     </FilterBtnBox>
 };
 
-FilterBox.defaultProps = {
-    width: null,
-    height: null,
-    text:"label",
-    bgcolor:null,
-    bdcolor:null,
-    ftcolor:"#FFC225",
-    clickedButton: ()=>{}
-}
+// FilterBox.defaultProps = {
+//     width: null,
+//     height: null,
+//     text:"label",
+//     bgcolor:null,
+//     bdcolor:null,
+//     ftcolor:"#FFC225",
+// }
 
 export default FilterBox;
