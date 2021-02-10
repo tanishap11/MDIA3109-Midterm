@@ -126,7 +126,7 @@ const Expand = styled.div`
     background: #FFFFFF;
     box-sizing: border-box;
     box-shadow: 5px 0px 18px rgba(0, 0, 0, 0.08);
-    display:${props=>props.expanded ? "inline-flex" : "hidden" };
+    display:${props=>props.expanded ? "inline-flex" : "none" };
     height:${props=>props.expanded ? "auto" : "0px" };
     font-size:${props=>props.expanded ? "18px" : "0px" };
     opacity:${props=>props.expanded ? 1 : 0 };
