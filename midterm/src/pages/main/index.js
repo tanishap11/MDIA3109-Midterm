@@ -16,21 +16,6 @@ import AddButton from 'comps/AddButton';
 
 require('typeface-roboto');
 
-const mysql = require('mysql')
-
-// 2
-const dbDetails = {
-  connectionLimit : 10,
-  host     : process.env.MYSQL_HOST || 'SG-WalkIt-3847-mysql-master.servers.mongodirector.com',
-  user     : process.env.MYSQL_USERNAME || 'walk_it_user',
-  password : process.env.MYSQL_PASSWORD || 'MyNewPass4!',
-  database : process.env.MYSQL_DATABASE || 'walk_it'
-}
-const connection = mysql.createConnection(dbDetails)
-// 3
-
-console.log(connection);
-
 
 const Main = () => {
 
