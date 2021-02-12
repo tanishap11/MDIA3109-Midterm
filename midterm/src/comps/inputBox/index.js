@@ -97,7 +97,7 @@ const ProcessBtn = styled.button`
 
 
 
-const Input_box = ({ width, height, name, time, email, phone, breed, gender, med}) => {
+const Input_box = ({ width, height, name, time, email, phone, breed, size, gender, med}) => {
 
 
     return <div>
@@ -125,9 +125,11 @@ const Input_box = ({ width, height, name, time, email, phone, breed, gender, med
         <InputRow>
             <div>
                 <InputLabel for="breed" >Breed</InputLabel>
-                <InputForm width="273px" height={height}  type='text' defaultValue={breed} />
+                <InputForm width="170px" height={height}  type='text' defaultValue={breed} />
             </div>
             <div>
+                <InputLabel for="size" >Size</InputLabel>
+                <InputForm width="90px" height={height}  type='text' defaultValue={size} />
                 {/*
                 <InputRadio>
                     <div>
@@ -183,6 +185,7 @@ Input_box.defaultProps = {
     email:null,
     phone:null,
     breed:null,
+    size:null,
     gender:null,
     med:null
 
