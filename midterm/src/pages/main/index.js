@@ -17,6 +17,8 @@ import AddButton from 'comps/AddButton';
 require('typeface-roboto');
 
 
+
+
 const Main = () => {
 
   const [allclients, setAll] = useState([]);
@@ -51,7 +53,6 @@ const Main = () => {
       <AddButton />
       {/* <FilterButton name="Add" display="none" img=""/> */}
     </div>
-    <Pro_box />
     <Pro_box />
     </div>
   </div>
