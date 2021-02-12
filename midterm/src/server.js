@@ -11,8 +11,6 @@ app.listen(port, () => {
   console.log(`Listening on port ${port}`)
 })
 
-
-
 app.get('/api/tasks', (req, res) => {
   console.log("entered function");
   database.allTasks((error, tasks) => {
@@ -24,5 +22,25 @@ app.get('/api/tasks', (req, res) => {
     }
     
     res.send({tasks})
+  })
+})
+
+app.post('/api/tasks', (req, res) => {
+  const task = req.body
+  
+  // 1
+  database.createTask(task, (error, taskId) => {
+    
+    // 2
+    if (error) {
+      res.send({error})
+      return
+    }
+
+    // 3
+    task.id = taskId
+
+    // 4
+    res.send({task})
   })
 })

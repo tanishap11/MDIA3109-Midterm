@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import FilterImage from '../../image/filter.png';
 import AddBox from 'comps/AddBox';
 import ActiveFilterImage from '../../image/filter-active.png';
+import axios from 'axios';
 
 const ButtonCnt = styled.div`
     display:inline-flex;
@@ -60,6 +61,13 @@ const Expand = styled.div`
 const AddButton = ({width, height, img, display, expand}) => {
     
     const [expanded, setExpanded] = useState(false);
+    
+
+    const HandleFormComplete = (name, time, email, phone, breed, size, gender, med) => {
+        console.log(name, time, email, phone, breed, size, gender, med);
+    var resp = axios.post("http://localhost:8080/api/tasks", {name:name, time:time, email:email, phone:phone, breed:breed, size:size, gender:gender, med:med});
+    console.log("create", resp)
+    }
 
     useEffect(()=>{
         setExpanded(expand);
@@ -75,7 +83,7 @@ const AddButton = ({width, height, img, display, expand}) => {
 
             <Expand expanded={expanded}>
                 {/* <Container> */}
-                    <AddBox />
+                    <AddBox onFormComplete={HandleFormComplete}/>
                 {/* </Container> */}
             </Expand>
     </ButtonCnt>

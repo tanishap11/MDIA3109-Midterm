@@ -63,7 +63,7 @@ const ApplyButton = styled.button`
         color:white;
     }
 `;
-const FilterBox = ({click, onMenuExpand, width, height, name, bgcolor, text}) => {
+const FilterBox = ({onFormComplete, width, height, bgcolor, text}) => {
     
     const [clickedButton, setClicked] = useState(null);
 
@@ -79,177 +79,83 @@ const FilterBox = ({click, onMenuExpand, width, height, name, bgcolor, text}) =>
     const [check10, setCheck10] = useState(false);
     const [check11, setCheck11] = useState(false);
     
-    
-    // useEffect(()=>{
-    //     //this is Change
-    //     setCheck1(check3);
-    //     setCheck2(check3);
-    //     setCheck3(check3);
-    //     setCheck4(check9);
-    //     setCheck5(check11);
-    //     setCheck6(check11);
-    //     setCheck7(check11);
-    //     setCheck8(check11);
-    //     setCheck9(check11);
-    //     setCheck10(check11);
-    //     setCheck11(check11);
-    // }, [check11])
+    const [name, setName] = useState("");
+    const [time, setTime] = useState("");
+    const [email, setEmail] = useState("");
+    const [phone, setPhone] = useState("");
+    const [breed, setBreed] = useState("");
+    const [size, setSize] = useState("");
+    const [gender, setGender] = useState("");
+    const [med, setMed] = useState("");
 
     return <FilterBtnBox width={width} height={height}>
-        
-        {/* <ExitButton /> */}
-        {/* <InputRow>
-            <span>Filters</span>  
-        </InputRow>
-        <InputRow>
-        </InputRow>
-        <InputRow>
-            <InputLabel for="size" >Size</InputLabel>
-            <div>
-                <span className="checks">
-                    <FilterCheckbox onChange={(e)=>{
-                        setCheck1(e.target.checked);
-                    }} checked={check1} /> S
-                </span>
-                <span className="checks">
-                    <FilterCheckbox onChange={(e)=>{
-                        setCheck2(e.target.checked);
-                    }} checked={check2} /> M
-                </span>
-                <span className="checks">
-                    <FilterCheckbox onChange={(e)=>{
-                        setCheck3(e.target.checked);
-                    }} checked={check3} /> L
-                </span>
-            </div>
-        </InputRow>
-        <InputRow>
-            <InputLabel for="Breed" >Breed</InputLabel>
-            <div>
-                <span className="checks">
-                    <FilterCheckbox onChange={(e)=>{
-                        setCheck4(e.target.checked);
-                    }} checked={check4} /> Beagle
-                </span>
-                <span className="checks">
-                    <FilterCheckbox onChange={(e)=>{
-                        setCheck5(e.target.checked);
-                    }} checked={check5} /> Pomeranian
-                </span>
-                <span className="checks">
-                    <FilterCheckbox onChange={(e)=>{
-                        setCheck6(e.target.checked);
-                    }} checked={check6} /> Husky
-                </span>
-                </div>
-        </InputRow>
-
-        <InputRow>
-            <div>
-                <span className="checks">
-                    <FilterCheckbox onChange={(e)=>{
-                        setCheck7(e.target.checked);
-                    }} checked={check7} /> Shiba
-                </span>
-                <span className="checks">
-                    <FilterCheckbox onChange={(e)=>{
-                        setCheck8(e.target.checked);
-                    }} checked={check8} /> Other
-                </span>
-            </div>
-        </InputRow>
-
-        <InputRow>
-            <InputLabel for="progress" >Progress</InputLabel>
-            <div>
-                <span className="checks">
-                    <FilterCheckbox onChange={(e)=>{
-                        setCheck9(e.target.checked);
-                    }} checked={check9} /> Pending
-                </span>
-                <span className="checks">
-                    <FilterCheckbox onChange={(e)=>{
-                        setCheck10(e.target.checked);
-                    }} checked={check10} /> In Progress
-                </span>
-                <span className="checks">
-                    <FilterCheckbox onChange={(e)=>{
-                        setCheck11(e.target.checked);
-                    }} checked={check11} /> Completed
-                </span>
-            </div>
-        </InputRow>
-                */}
                 <InputRow>
             <div>
             <InputLabel for="owner" >Name of Owner</InputLabel>
-            <InputForm width="170px" height={height}  type='text' defaultValue="" />
+            <InputForm width="170px" height={height}  type='text' defaultValue="" onChange={(e)=>{
+            setName(e.target.value);
+        }}/>
             </div>
             <div>
                 <InputLabel for="time" >Time</InputLabel>
-                <InputForm width="90px" height={height}  type='text' defaultValue="" />
+                <InputForm width="90px" height={height}  type='text' defaultValue="" onChange={(e)=>{
+            setTime(e.target.value);
+        }}/>
             </div>
         </InputRow>
         <InputRow>
             <div>
                 <InputLabel for="email" >Email</InputLabel>
-                <InputForm width="170px" height={height}  type='text' defaultValue="" />
+                <InputForm width="170px" height={height}  type='text' defaultValue="" onChange={(e)=>{
+            setEmail(e.target.value);
+        }}/>
             </div>
             <div>
                 <InputLabel for="phone" >Phone Number</InputLabel>
-                <InputForm width="90px" height={height}  type='text' defaultValue=""/>
+                <InputForm width="90px" height={height}  type='text' defaultValue=""onChange={(e)=>{
+            setPhone(e.target.value);
+        }}/>
             </div>
         </InputRow>
         <InputRow>
             <div>
                 <InputLabel for="breed" >Breed</InputLabel>
-                <InputForm width="273px" height={height}  type='text' defaultValue="" />
+                <InputForm width="170px" height={height}  type='text' defaultValue="" onChange={(e)=>{
+            setBreed(e.target.value);
+        }}/>
             </div>
             <div>
-                {/*
-                <InputRadio>
-                    <div>
-                        <InputLabel for="size" >S</InputLabel>
-                        <InputRadioForm type="checkbox" value='small' onchange="checkboxChange()" />
-                    </div>
-                    <div>    
-                        <InputLabel for="size" >M</InputLabel>
-                        <InputRadioForm  type="checkbox" value='medium' onchange="checkboxChange()" />
-                    </div>
-                    <div>
-                        <InputLabel for="size" >L</InputLabel>
-                        <InputRadioForm type="checkbox" value='large' onchange="checkboxChange()"/>
-                    </div>
-                </InputRadio>
-                */}
+                <InputLabel for="size" >Size</InputLabel>
+                <InputForm width="90px" height={height}  type='text' defaultValue="" onChange={(e)=>{
+            setSize(e.target.value);
+        }}/>
             </div>
         </InputRow>
 
         <InputRow>
             <div>
                 <InputLabel for="gender" >Gender</InputLabel>
-                <InputForm width="170px" height={height}  type='text' defaultValue="" />
+                <InputForm width="170px" height={height}  type='text' defaultValue="" onChange={(e)=>{
+            setGender(e.target.value);
+        }}/>
             </div>
             <div>
                 <InputLabel for="medication" >Medication</InputLabel>
-                <InputForm width="90px" height={height}  type='text' defaultValue="" />
+                <InputForm width="90px" height={height}  type='text' defaultValue="" onChange={(e)=>{
+            setMed(e.target.value);
+        }}/>
             </div>
         </InputRow>
         <div className="button">
-            <ApplyButton onClick={(e)=>{
-                clickedButton();
-            }} width={width} height={height} bgcolor={bgcolor}>Add</ApplyButton>
+            <ApplyButton onClick={()=>{
+            onFormComplete(name, time, email, phone, breed, size, gender, med);
+        }}>Add</ApplyButton>
         </div>
     </FilterBtnBox>
 };
 
-// FilterBox.defaultProps = {
-//     width: null,
-//     height: null,
-//     text:"label",
-//     bgcolor:null,
-//     bdcolor:null,
-//     ftcolor:"#FFC225",
-// }
+FilterBox.defaultProps = {
+    onFormComplete:()=>{}
+}
 
 export default FilterBox;

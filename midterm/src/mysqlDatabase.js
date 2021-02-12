@@ -24,9 +24,26 @@ function allTasks(callback) {
   console.log("get message", allTasks);
   }
 
-  
 exports.allTasks = allTasks
 
+
+function createTask(task, callback) {
+  // 1
+  const query = `
+    INSERT INTO tasks (name, time, email, phone, breed, size, gender, med)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+  `
+
+  // 2
+  const params = [task.name, task.time, task.email, task.phone, task.breed, task.size, task.gender, task.med]
+
+  // 3
+  connection.query(query, params, function (error, result, fields) {
+    callback(error, result)
+  })
+  console.log("post message", createTask);
+}
+exports.createTask = createTask
 /*// 1
 
 
