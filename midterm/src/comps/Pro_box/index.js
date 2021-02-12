@@ -6,7 +6,6 @@ import DropdownImage from '../../image/dropdown.png';
 import Oliver from '../../image/oliver.jpeg';
 import Edit from '../../image/edit.png';
 import Input_Box from 'comps/inputBox';
-import axios from 'axios';
 
 const EditBox = styled.div`
 min-width: ${props=>props.width ? props.width : "295px"};
@@ -144,28 +143,16 @@ const Expand = styled.div`
     background-color:#F4F6F6;
 `;
 
-const Pro_box = ({expand, onMenuExpand, width, height, name, bgcolor, text}) => {
+const Pro_box = ({expand, onMenuExpand, width, height, name, bgcolor, text, Iname, Itime, Iemail, Iphone, Ibreed, Igender, Imed}) => {
 
     const [expanded, setExpanded] = useState([]);
-
-    const [allclients, setAll] = useState([]);
-
-    const GetMessages = async () => {
-        var resp = await axios.get("http://localhost:8080/api/tasks");
-        setAll(resp.data.tasks);
-        console.log("get message", resp.data.tasks);
-    }
-    
-    useEffect(() => {
-        GetMessages()
-    }, []);
 
     useEffect(()=>{
         setExpanded(expand);
     },[expand])
 
     return <div>
-        {allclients.map(o=><Container width={width} height={height}>
+        <Container width={width} height={height}>
 
         <DropDownMenu onClick={()=> (
             setExpanded(!expanded)
@@ -179,9 +166,9 @@ const Pro_box = ({expand, onMenuExpand, width, height, name, bgcolor, text}) => 
         </DropDownMenu>
 
         <Expand expanded={expanded}>
-            <Input_Box name={o.name} time={o.time} email={o.email} phone={o.phone} breed={o.breed} gender={o.gender} med={o.med}/>
+            <Input_Box name={Iname} time={Itime} email={Iemail} phone={Iphone} breed={Ibreed} gender={Igender} med={Imed}/>
         </Expand>
-    </Container>)}
+    </Container>
     </div>
 };
 
@@ -190,7 +177,14 @@ Pro_box.defaultProps = {
     height: null,
     name: "Name",
     expand: false,
-    text: "Edit Profile"
+    text: "Edit Profile",
+    Iname:null,
+    Itime:null,
+    Iemail:null,
+    Iphone:null,
+    Ibreed:null,
+    Igender:null,
+    Imed:null
 }
 
 export default Pro_box;

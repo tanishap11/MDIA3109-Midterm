@@ -23,17 +23,14 @@ const Main = () => {
 
   const [allclients, setAll] = useState([]);
 
-  
-  /*const GetMessages = async () => {
-    var resp = await axios.get("https://localhost:3306/api/");
-    setAll(resp.data);
-    console.log("get message", resp);
+    const GetMessages = async () => {
+        var resp = await axios.get("http://localhost:8080/api/tasks");
+        setAll(resp.data.tasks);
     }
-  
+    
     useEffect(() => {
-      GetMessages()
-  }, []);
-  */
+        GetMessages()
+    }, []);
 
   const [clickedButton, setClickedButton] = useState(null);
 
@@ -53,7 +50,7 @@ const Main = () => {
       <AddButton />
       {/* <FilterButton name="Add" display="none" img=""/> */}
     </div>
-    <Pro_box />
+    {allclients.map(o=><Pro_box name={o.name} Iname={o.name} Itime={o.time} Iemail={o.email} Iphone={o.phone} Ibreed={o.breed} Igender={o.gender} Imed={o.med}/>)}
     </div>
   </div>
 
