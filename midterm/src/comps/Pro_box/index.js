@@ -45,6 +45,8 @@ const Container = styled.div`
     margin-top:15px;
     // box-shadow: 0 0 20px #d1d1d1;
     box-shadow: 0 4px 15px #d1d1d1;
+    min-width:205px;
+    // max-width:300px;
 `;
 
 const DropDownMenu  = styled.div`
@@ -89,15 +91,15 @@ export const Pending = "#0D71E7";
 export const Progress = "#FFC225";
 export const Completed = "#60BE68";
 
-const Dot = styled.div`
-    min-width: ${props=>props.width ? props.width : "12px"};
-    min-height: ${props=>props.height ? props.height : "12px"};
-    max-width: ${props=>props.width ? props.width : "12px"};
-    max-height: ${props=>props.height ? props.height : "12px"};
-    background-color: ${props=>props.bgcolor ? props.bgcolor : Completed};
-    border-radius: 50%;
-    display:${props=>props.expanded ? "hidden" : "inline-flex" };
-`;
+// const Dot = styled.div`
+//     min-width: ${props=>props.width ? props.width : "12px"};
+//     min-height: ${props=>props.height ? props.height : "12px"};
+//     max-width: ${props=>props.width ? props.width : "12px"};
+//     max-height: ${props=>props.height ? props.height : "12px"};
+//     background-color: ${props=>props.bgcolor ? props.bgcolor : Completed};
+//     border-radius: 50%;
+//     display:${props=>props.expanded ? "hidden" : "inline-flex" };
+// `;
 
 const Avatar = styled.div`
     min-width: ${props=>props.width ? props.width : "48px"};
@@ -112,14 +114,13 @@ const Avatar = styled.div`
     background-position: center;
     background-color: #D3D9D9;
     border-radius: 5px;
-    margin-left:${props=>props.expanded ? "-58px" : "-48px"};
     margin-right:-36px;
 `;
 
 const NameBox = styled.div`
     font-size:18px;
     margin-left:${props=>props.expanded ? "-58px" : "-48px"};
-    margin-right:64px;
+    margin-right:4px;
 `;
 
 const Expand = styled.div`
@@ -158,7 +159,6 @@ const Pro_box = ({expand, onMenuExpand, width, height, name, bgcolor, text, Inam
             setExpanded(!expanded)
         )}>
             <DropDownBox expanded={expanded}>
-                <div><Dot /></div>
                 <div><Avatar  expanded={expanded} /></div>
                 <div><NameBox expanded={expanded}>{name}</NameBox></div>
                 <div><DropdownIcon expanded={expanded} /></div>
