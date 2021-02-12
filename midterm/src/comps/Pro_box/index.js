@@ -6,6 +6,7 @@ import DropdownImage from '../../image/dropdown.png';
 import Oliver from '../../image/oliver.jpeg';
 import Edit from '../../image/edit.png';
 import Input_Box from 'comps/inputBox';
+import axios from 'axios';
 
 const EditBox = styled.div`
 min-width: ${props=>props.width ? props.width : "295px"};
@@ -147,11 +148,24 @@ const Pro_box = ({expand, onMenuExpand, width, height, name, bgcolor, text}) => 
 
     const [expanded, setExpanded] = useState([]);
 
+    const [allclients, setAll] = useState([]);
+
+    const GetMessages = async () => {
+        var resp = await axios.get("http://localhost:8080/api/tasks");
+        setAll(resp.data.tasks);
+        console.log("get message", resp.data.tasks);
+    }
+    
+    useEffect(() => {
+        GetMessages()
+    }, []);
+
     useEffect(()=>{
         setExpanded(expand);
     },[expand])
 
-    return <Container width={width} height={height}>
+    return <div>
+        {allclients.map(o=><Container width={width} height={height}>
 
         <DropDownMenu onClick={()=> (
             setExpanded(!expanded)
@@ -165,9 +179,10 @@ const Pro_box = ({expand, onMenuExpand, width, height, name, bgcolor, text}) => 
         </DropDownMenu>
 
         <Expand expanded={expanded}>
-            <Input_Box />
+            <Input_Box name={o.name} time={o.time} email={o.email} phone={o.phone} breed={o.breed} gender={o.gender} med={o.med}/>
         </Expand>
-    </Container>
+    </Container>)}
+    </div>
 };
 
 Pro_box.defaultProps = {

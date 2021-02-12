@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import axios from 'axios';
 
 
 const Container = styled.div`
@@ -98,48 +97,35 @@ const ProcessBtn = styled.button`
 
 
 
-const Input_box = ({ width, height,text, bgcolor, bdcolor, ftcolor, onBtnSelect, msgs}) => {
+const Input_box = ({ width, height, name, time, email, phone, breed, gender, med}) => {
 
-    const [allclients, setAll] = useState([]);
-
-    const GetMessages = async () => {
-        var resp = await axios.get("http://localhost:8080/api/tasks");
-        setAll(resp.data.tasks);
-        console.log("get message", resp.data.tasks);
-    }
-
-
-    
-    useEffect(() => {
-        GetMessages()
-    }, []);
 
     return <div>
-        {allclients.map(o=><Container width={width} height={height}>
+        <Container width={width} height={height}>
         <InputRow>
             <div>
             <InputLabel for="owner" >Name of Owner</InputLabel>
-            <InputForm width="170px" height={height}  type='text' defaultValue={o.name} />
+            <InputForm width="170px" height={height}  type='text' defaultValue={name} />
             </div>
             <div>
                 <InputLabel for="time" >Time</InputLabel>
-                <InputForm width="90px" height={height}  type='text' defaultValue={o.time} />
+                <InputForm width="90px" height={height}  type='text' defaultValue={time} />
             </div>
         </InputRow>
         <InputRow>
             <div>
                 <InputLabel for="email" >Email</InputLabel>
-                <InputForm width="170px" height={height}  type='text' defaultValue={o.email} />
+                <InputForm width="170px" height={height}  type='text' defaultValue={email} />
             </div>
             <div>
                 <InputLabel for="phone" >Phone Number</InputLabel>
-                <InputForm width="90px" height={height}  type='text' defaultValue={o.phone} />
+                <InputForm width="90px" height={height}  type='text' defaultValue={phone} />
             </div>
         </InputRow>
         <InputRow>
             <div>
                 <InputLabel for="breed" >Breed</InputLabel>
-                <InputForm width="170px" height={height}  type='text' defaultValue={o.breed} />
+                <InputForm width="170px" height={height}  type='text' defaultValue={breed} />
             </div>
             <div>
                 <InputRadio>
@@ -162,11 +148,11 @@ const Input_box = ({ width, height,text, bgcolor, bdcolor, ftcolor, onBtnSelect,
         <InputRow>
             <div>
                 <InputLabel for="gender" >Gender</InputLabel>
-                <InputForm width="170px" height={height}  type='text' defaultValue={o.gender} />
+                <InputForm width="170px" height={height}  type='text' defaultValue={gender} />
             </div>
             <div>
                 <InputLabel for="medication" >Medication</InputLabel>
-                <InputForm width="90px" height={height}  type='text' defaultValue={o.med} />
+                <InputForm width="90px" height={height}  type='text' defaultValue={med} />
             </div>
         </InputRow>
 
@@ -179,7 +165,7 @@ const Input_box = ({ width, height,text, bgcolor, bdcolor, ftcolor, onBtnSelect,
             <ProcessBtn bgcolor={Completed} bdcolor={Completed} ftcolor={Completed} >Completed</ProcessBtn>
         </ButtonRow>
 
-    </Container>)}
+    </Container>
     </div>
 };
 
@@ -189,7 +175,15 @@ Input_box.defaultProps = {
     text:"label",
     bgcolor:null,
     bdcolor:null,
-    ftcolor:"#FFC225"
+    ftcolor:"#FFC225",
+    name:null,
+    time:null,
+    email:null,
+    phone:null,
+    breed:null,
+    gender:null,
+    med:null
+
 }
 
 export default Input_box;
