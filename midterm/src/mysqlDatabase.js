@@ -1,9 +1,6 @@
 
 //let connection = mysql.createConnection({host: "SG-WalkIt-3847-mysql-master.servers.mongodirector.com", user: 'walk_it_user', password: 'MyNewPass4!', database: "walk_it", port: 3306});
 
-
-
-
 const mysql = require('mysql')
 
 // 2

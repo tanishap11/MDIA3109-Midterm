@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
 
 
 const Container = styled.div`
@@ -81,7 +82,7 @@ const ProcessBtn = styled.button`
     margin:12px 5px 16px 5px;
 `;
 
-const fakedb = [
+/*const fakedb = [
     {
         name: "Tanisha Patel",
         time: "01/02/2021",
@@ -93,14 +94,28 @@ const fakedb = [
         med: "N",
         progress: "completed"
     }
-]
+]*/
 
 
 
 const Input_box = ({ width, height,text, bgcolor, bdcolor, ftcolor, onBtnSelect, msgs}) => {
 
+    const [allclients, setAll] = useState([]);
+
+    const GetMessages = async () => {
+        var resp = await axios.get("http://localhost:8080/api/tasks");
+        setAll(resp.data.tasks);
+        console.log("get message", resp.data.tasks);
+    }
+
+
+    
+    useEffect(() => {
+        GetMessages()
+    }, []);
+
     return <div>
-        {msgs.map(o=><Container width={width} height={height}>
+        {allclients.map(o=><Container width={width} height={height}>
         <InputRow>
             <div>
             <InputLabel for="owner" >Name of Owner</InputLabel>
@@ -174,8 +189,7 @@ Input_box.defaultProps = {
     text:"label",
     bgcolor:null,
     bdcolor:null,
-    ftcolor:"#FFC225",
-    msgs: fakedb
+    ftcolor:"#FFC225"
 }
 
 export default Input_box;

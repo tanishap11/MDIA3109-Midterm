@@ -64,13 +64,15 @@ const FilterBox = ({onMenuExpand, width, height, name, bgcolor, text}) => {
     const [msgs, setMsgs] = useState([]);
     const [allmsgs, setAll] = useState([]);
     const items_per_page = 15;
+
     const GetMessages = async () => {
-        var resp = await axios.get("https://advdyn2021.herokuapp.com/allmessages");
-        // console.log("get message", resp);
-        var arr = resp.data.slice(0, 15);
-        setMsgs(arr);
-        setAll(resp.data);
+        var resp = await axios.get("http://localhost:8080/api/tasks");
+        console.log("get message", resp.data.tasks);
     }
+    
+    useEffect(() => {
+        GetMessages()
+    }, []);
 
     const setCheck1 = (checked) =>{
         if(checked){
