@@ -1,14 +1,17 @@
 
 //let connection = mysql.createConnection({host: "SG-WalkIt-3847-mysql-master.servers.mongodirector.com", user: 'walk_it_user', password: 'MyNewPass4!', database: "walk_it", port: 3306});
 
+
+
+
 const mysql = require('mysql')
 
 // 2
 const dbDetails = {
   connectionLimit : 10,
   host     : process.env.MYSQL_HOST || 'SG-WalkIt-3847-mysql-master.servers.mongodirector.com',
-  user     : process.env.MYSQL_USERNAME || 'walk_it_user',
-  password : process.env.MYSQL_PASSWORD || 'MyNewPass4!',
+  user     : process.env.MYSQL_USERNAME || 'sgroot',
+  password : process.env.MYSQL_PASSWORD || '$D4Jo2qiASS2S6Ab',
   database : process.env.MYSQL_DATABASE || 'walk_it'
 }
 const connection = mysql.createConnection(dbDetails)
