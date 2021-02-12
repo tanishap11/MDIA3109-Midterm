@@ -50,7 +50,7 @@ const Main = () => {
       <AddButton />
       {/* <FilterButton name="Add" display="none" img=""/> */}
     </div>
-    {allclients.map(o=><Pro_box name={o.name} Iname={o.name} Itime={o.time} Iemail={o.email} Iphone={o.phone} Ibreed={o.breed} Igender={o.gender} Imed={o.med}/>)}
+    {allclients.map(o=><Pro_box name={o.name} Iname={o.name} Itime={o.time} Iemail={o.email} Iphone={o.phone} Ibreed={o.breed} Isize={o.size} Igender={o.gender} Imed={o.med}/>)}
     </div>
   </div>
 

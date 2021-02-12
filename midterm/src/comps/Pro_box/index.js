@@ -143,7 +143,7 @@ const Expand = styled.div`
     background-color:#F4F6F6;
 `;
 
-const Pro_box = ({expand, onMenuExpand, width, height, name, bgcolor, text, Iname, Itime, Iemail, Iphone, Ibreed, Igender, Imed}) => {
+const Pro_box = ({expand, onMenuExpand, width, height, name, bgcolor, text, Iname, Itime, Iemail, Iphone, Ibreed, Isize, Igender, Imed}) => {
 
     const [expanded, setExpanded] = useState([]);
 
@@ -166,7 +166,7 @@ const Pro_box = ({expand, onMenuExpand, width, height, name, bgcolor, text, Inam
         </DropDownMenu>
 
         <Expand expanded={expanded}>
-            <Input_Box name={Iname} time={Itime} email={Iemail} phone={Iphone} breed={Ibreed} gender={Igender} med={Imed}/>
+            <Input_Box name={Iname} time={Itime} email={Iemail} phone={Iphone} breed={Ibreed} size={Isize} gender={Igender} med={Imed}/>
         </Expand>
     </Container>
     </div>
@@ -183,6 +183,7 @@ Pro_box.defaultProps = {
     Iemail:null,
     Iphone:null,
     Ibreed:null,
+    Isize:null,
     Igender:null,
     Imed:null
 }
