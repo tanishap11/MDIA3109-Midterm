@@ -1,5 +1,5 @@
 const express = require('express') 
-const database = require('./mysqlDatabase')
+const database = require('./src/mysqlDatabase')
 
 
 const app = express() 
