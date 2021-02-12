@@ -109,13 +109,13 @@ const Input_box = ({ width, height, name, time, email, phone, breed, size, gende
             </div>
             <div>
                 <InputLabel for="time" >Time</InputLabel>
-                <InputForm width="90px" height={height}  type='text' defaultValue={time} />
+                <InputForm width="90px" height={height}  type='time' defaultValue={time} />
             </div>
         </InputRow>
         <InputRow>
             <div>
                 <InputLabel for="email" >Email</InputLabel>
-                <InputForm width="170px" height={height}  type='text' defaultValue={email} />
+                <InputForm width="170px" height={height}  type='email' defaultValue={email} />
             </div>
             <div>
                 <InputLabel for="phone" >Phone Number</InputLabel>
@@ -130,22 +130,7 @@ const Input_box = ({ width, height, name, time, email, phone, breed, size, gende
             <div>
                 <InputLabel for="size" >Size</InputLabel>
                 <InputForm width="90px" height={height}  type='text' defaultValue={size} />
-                {/*
-                <InputRadio>
-                    <div>
-                        <InputLabel for="size" >S</InputLabel>
-                        <InputRadioForm type="checkbox" value='small' onchange="checkboxChange()" />
-                    </div>
-                    <div>    
-                        <InputLabel for="size" >M</InputLabel>
-                        <InputRadioForm  type="checkbox" value='medium' onchange="checkboxChange()" />
-                    </div>
-                    <div>
-                        <InputLabel for="size" >L</InputLabel>
-                        <InputRadioForm type="checkbox" value='large' onchange="checkboxChange()"/>
-                    </div>
-                </InputRadio>
-                */}
+                
             </div>
         </InputRow>
 

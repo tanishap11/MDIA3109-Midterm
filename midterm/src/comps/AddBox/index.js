@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import FilterCheck from 'comps/FliterCheck';
 // import ExitButton from '../../image/exit.png';
@@ -64,20 +64,6 @@ const ApplyButton = styled.button`
     }
 `;
 const FilterBox = ({onFormComplete, width, height, bgcolor, text}) => {
-    
-    const [clickedButton, setClicked] = useState(null);
-
-    const [check1, setCheck1] = useState(false);
-    const [check2, setCheck2] = useState(false);
-    const [check3, setCheck3] = useState(false);
-    const [check4, setCheck4] = useState(false);
-    const [check5, setCheck5] = useState(false);
-    const [check6, setCheck6] = useState(false);
-    const [check7, setCheck7] = useState(false);
-    const [check8, setCheck8] = useState(false);
-    const [check9, setCheck9] = useState(false);
-    const [check10, setCheck10] = useState(false);
-    const [check11, setCheck11] = useState(false);
     
     const [name, setName] = useState("");
     const [time, setTime] = useState("");
