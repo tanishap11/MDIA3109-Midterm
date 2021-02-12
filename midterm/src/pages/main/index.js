@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import Upload from 'comps/Upload';
 import Avatar from 'comps/Avatar';
 import Dot from 'comps/Dot';
@@ -11,24 +12,41 @@ import Banner from 'comps/Banner';
 import FliterCheck from 'comps/FliterCheck';
 import FilterButton from 'comps/FilterButton';
 import ActiveFilterImage from '../../image/filter-active.png';
-
-import Input from 'comps/Input';
-import PendingButton from 'comps/ProgressBut/Pending';
-import ProgressButton from 'comps/ProgressBut/InProgress';
-import CompletedButton from 'comps/ProgressBut/Completed';
-import LandingPage from 'comps/ProgressBut/Test/Pen';
-import YellowBut from 'comps/ProgressBut/Test/Prog';
-import GreenBut from 'comps/ProgressBut/Test/Com';
-import BlueBut from 'comps/ProgressBut/Test/Pend';
-import Input_box from 'comps/inputBox';
-
-import StatusButton from 'comps/StatusButton';
 import AddButton from 'comps/AddButton';
 
 require('typeface-roboto');
 
+const mysql = require('mysql')
+
+// 2
+const dbDetails = {
+  connectionLimit : 10,
+  host     : process.env.MYSQL_HOST || 'SG-WalkIt-3847-mysql-master.servers.mongodirector.com',
+  user     : process.env.MYSQL_USERNAME || 'walk_it_user',
+  password : process.env.MYSQL_PASSWORD || 'MyNewPass4!',
+  database : process.env.MYSQL_DATABASE || 'walk_it'
+}
+const connection = mysql.createConnection(dbDetails)
+// 3
+
+console.log(connection);
+
 
 const Main = () => {
+
+  const [allclients, setAll] = useState([]);
+
+  
+  /*const GetMessages = async () => {
+    var resp = await axios.get("https://localhost:3306/api/");
+    setAll(resp.data);
+    console.log("get message", resp);
+    }
+  
+    useEffect(() => {
+      GetMessages()
+  }, []);
+  */
 
   const [clickedButton, setClickedButton] = useState(null);
 
