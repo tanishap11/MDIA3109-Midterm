@@ -125,9 +125,10 @@ const Input_box = ({ width, height, name, time, email, phone, breed, gender, med
         <InputRow>
             <div>
                 <InputLabel for="breed" >Breed</InputLabel>
-                <InputForm width="170px" height={height}  type='text' defaultValue={breed} />
+                <InputForm width="273px" height={height}  type='text' defaultValue={breed} />
             </div>
             <div>
+                {/*
                 <InputRadio>
                     <div>
                         <InputLabel for="size" >S</InputLabel>
@@ -142,6 +143,7 @@ const Input_box = ({ width, height, name, time, email, phone, breed, gender, med
                         <InputRadioForm type="checkbox" value='large' onchange="checkboxChange()"/>
                     </div>
                 </InputRadio>
+                */}
             </div>
         </InputRow>
 

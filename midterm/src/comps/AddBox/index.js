@@ -23,39 +23,44 @@ const FilterBtnBox = styled.div`
 
 const InputRow = styled.div`
     display:flex;
-    flex-direction:column;
-    align-items:flex-start;
-    &:div{
+    justify-content:center;
+    div{
         display:inline-flex;
-        flex-direction:row !important;
+        flex-direction:column;
         align-items:flex-start;
+        margin:6px 4px;
     }
-    &>span {
-        font-size:22px;
-    }
-    .checks{
-        margin-right:6px;
-    }
-    margin-bottom:12px;
 `;
 
 const InputLabel = styled.label`
-    font-size: 20px;
-    margin:6px 0px;
-    margin-bottom:12px;
+    font-size: 11px;
 
 `
-const FilterCheckbox = styled.input.attrs({type:'checkbox'})``;
+const InputForm = styled.input`
+    min-width: ${props=>props.width ? props.width : "90px"};
+    min-height: ${props=>props.height ? props.height: "28px"};
+    max-width: ${props=>props.width ? props.width : "280px"};
+    overflow:hidden;
+    font-size:13px;
+    border: 1px solid #D3D9D9;
+    border-radius:5px;
+    min-height:25px;
+    padding:5px;
+
+`;
+
 
 const ApplyButton = styled.button`
     width: ${props=>props.width ? props.width : "112px"};
     height: ${props=>props.height ? props.height : "48px"};
-    background-color: ${props=>props.bgcolor ? props.bgcolor : "#D3D9D9"};
-    color:white;
+    background-color: ${props=>props.bgcolor ? props.bgcolor : "white"};
+    border: 2px solid #60BE68;
+    color:#60BE68;
     border-radius:5px;
     font-size:17px;
     :hover{
-        background-color: ${props=>props.bgcolor ? "#D3D9D9" : "#60BE68"};
+        background-color: ${props=>props.bgcolor ? "white" : "#60BE68"};
+        color:white;
     }
 `;
 const FilterBox = ({click, onMenuExpand, width, height, name, bgcolor, text}) => {
@@ -93,7 +98,7 @@ const FilterBox = ({click, onMenuExpand, width, height, name, bgcolor, text}) =>
     return <FilterBtnBox width={width} height={height}>
         
         {/* <ExitButton /> */}
-        <InputRow>
+        {/* <InputRow>
             <span>Filters</span>  
         </InputRow>
         <InputRow>
@@ -174,10 +179,66 @@ const FilterBox = ({click, onMenuExpand, width, height, name, bgcolor, text}) =>
                 </span>
             </div>
         </InputRow>
+                */}
+                <InputRow>
+            <div>
+            <InputLabel for="owner" >Name of Owner</InputLabel>
+            <InputForm width="170px" height={height}  type='text' defaultValue="" />
+            </div>
+            <div>
+                <InputLabel for="time" >Time</InputLabel>
+                <InputForm width="90px" height={height}  type='text' defaultValue="" />
+            </div>
+        </InputRow>
+        <InputRow>
+            <div>
+                <InputLabel for="email" >Email</InputLabel>
+                <InputForm width="170px" height={height}  type='text' defaultValue="" />
+            </div>
+            <div>
+                <InputLabel for="phone" >Phone Number</InputLabel>
+                <InputForm width="90px" height={height}  type='text' defaultValue=""/>
+            </div>
+        </InputRow>
+        <InputRow>
+            <div>
+                <InputLabel for="breed" >Breed</InputLabel>
+                <InputForm width="273px" height={height}  type='text' defaultValue="" />
+            </div>
+            <div>
+                {/*
+                <InputRadio>
+                    <div>
+                        <InputLabel for="size" >S</InputLabel>
+                        <InputRadioForm type="checkbox" value='small' onchange="checkboxChange()" />
+                    </div>
+                    <div>    
+                        <InputLabel for="size" >M</InputLabel>
+                        <InputRadioForm  type="checkbox" value='medium' onchange="checkboxChange()" />
+                    </div>
+                    <div>
+                        <InputLabel for="size" >L</InputLabel>
+                        <InputRadioForm type="checkbox" value='large' onchange="checkboxChange()"/>
+                    </div>
+                </InputRadio>
+                */}
+            </div>
+        </InputRow>
+
+        <InputRow>
+            <div>
+                <InputLabel for="gender" >Gender</InputLabel>
+                <InputForm width="170px" height={height}  type='text' defaultValue="" />
+            </div>
+            <div>
+                <InputLabel for="medication" >Medication</InputLabel>
+                <InputForm width="90px" height={height}  type='text' defaultValue="" />
+            </div>
+        </InputRow>
         <div className="button">
             <ApplyButton onClick={(e)=>{
                 clickedButton();
-            }} width={width} height={height} bgcolor={bgcolor}>Apply</ApplyButton>
+            }} width={width} height={height} bgcolor={bgcolor}>Add</ApplyButton>
         </div>
     </FilterBtnBox>
 };
