@@ -114,7 +114,7 @@ const Avatar = styled.div`
     background-position: center;
     background-color: #D3D9D9;
     border-radius: 5px;
-    margin-right:-36px;
+    margin-right:-6px;
 `;
 
 const NameBox = styled.div`
