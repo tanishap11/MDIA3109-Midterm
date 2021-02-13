@@ -58,8 +58,15 @@ const Expand = styled.div`
 
 const FilterButton = ({width, height, img, display, expand}) => {
     
+    const [clickedButton, setClickedButton] = useState(null);
     const [expanded, setExpanded] = useState(false);
-
+    // const ButtonColorSelect = () =>{
+    //     alert("Clicked apply");
+    //   }
+    const ButtonColorSelect = (check1, check2, check3, check4, check5, check6, check7, check8, check9, check10, check11) =>{
+    setClickedButton(check1, check2, check3, check4, check5, check6, check7, check8, check9, check10, check11);
+    console.log(check1, check2, check3, check4, check5, check6, check7, check8, check9, check10, check11)
+  }  
     useEffect(()=>{
         setExpanded(expand);
     },[expand])
@@ -75,7 +82,7 @@ const FilterButton = ({width, height, img, display, expand}) => {
 
             <Expand expanded={expanded}>
                 {/* <Container> */}
-                    <FilterBox />
+                    <FilterBox clickedButton={ButtonColorSelect}/>
                 {/* </Container> */}
             </Expand>
     </ButtonCnt>
