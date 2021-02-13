@@ -59,7 +59,7 @@ const ApplyButton = styled.button`
         background-color: ${props=>props.bgcolor ? "#D3D9D9" : "#60BE68"};
     }
 `;
-const FilterBox = ({onMenuExpand, width, height, name, bgcolor, text}) => {
+const FilterBox = ({onMenuExpand, width, height, name, bgcolor, text, clickedButton}) => {
     
     const [msgs, setMsgs] = useState([]);
     const [allmsgs, setAll] = useState([]);
@@ -233,12 +233,6 @@ const FilterBox = ({onMenuExpand, width, height, name, bgcolor, text}) => {
         }
     }
 
-
-
-
-    const clickedButton = (text) =>{
-
-    }
 
     // const [clickedButton, setClicked] = useState(null);
 

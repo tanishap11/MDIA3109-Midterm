@@ -22,31 +22,22 @@ require('typeface-roboto');
 const Main = () => {
 
   const [allclients, setAll] = useState([]);
-
-    const GetMessages = async () => {
+    
+    
+  const GetMessages = async () => {
         var resp = await axios.get("http://localhost:8080/api/tasks");
         setAll(resp.data.tasks);
     }
     
-    useEffect(() => {
-        GetMessages()
-    }, []);
+  useEffect(() => {
+      GetMessages()
+  }, []);
 
-  const [clickedButton, setClickedButton] = useState(null);
-
-  const ButtonColorSelect = (name, check1, check2, check3, check4, check5, check6, check7, check8, check9, check10) =>{
-    setClickedButton(name, check1, check2, check3, check4, check5, check6, check7, check8, check9, check10);
-    console.log(check1, check2, check3, check4, check5, check6, check7, check8, check9, check10)
-  }
-  
-  // const HandleApply = (check1, check2, check3, check4, check5, check6, check7, check8, check9, check10) => {
-  //   console.log(check1, check2, check3, check4, check5, check6, check7, check8, check9, check10)
-  // }
   return <div className="main">
     <Banner />
     <div className="content">
     <div className="topbut">
-      <FilterButton clickedButton={ButtonColorSelect}/>
+      <FilterButton />
       <AddButton />
       {/* <FilterButton name="Add" display="none" img=""/> */}
     </div>
