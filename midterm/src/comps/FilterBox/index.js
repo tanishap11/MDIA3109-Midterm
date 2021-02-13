@@ -74,179 +74,179 @@ const FilterBox = ({onMenuExpand, width, height, name, bgcolor, text, clickedBut
         GetMessages()
     }, []);
 
-    const setCheck1 = (checked) =>{
-        if(checked){
-            setMsgs(
-                allmsgs.filter((o)=>{
-                    return o.size =  "S";
-                })
-            )
-        }else {
-            setMsgs(
-                allmsgs
-            )
-        }
-    }
+    // const setCheck1 = (checked) =>{
+    //     if(checked){
+    //         setMsgs(
+    //             allmsgs.filter((o)=>{
+    //                 return o.size =  "S";
+    //             })
+    //         )
+    //     }else {
+    //         setMsgs(
+    //             allmsgs
+    //         )
+    //     }
+    // }
 
-    const setCheck2 = (checked) =>{
-        if(checked){
-            setMsgs(
-                allmsgs.filter((o)=>{
-                    return o.size =  "M";
-                })
-            )
-        }else {
-            setMsgs(
-                allmsgs
-            )
-        }
-    }
-
-    
-    const setCheck3 = (checked) =>{
-        if(checked){
-            setMsgs(
-                allmsgs.filter((o)=>{
-                    return o.size =  "L";
-                })
-            )
-        }else {
-            setMsgs(
-                allmsgs
-            )
-        }
-    }
-
-
-    const setCheck4 = (checked) =>{
-        if(checked){
-            setMsgs(
-                allmsgs.filter((o)=>{
-                    return o.breed =  "Beagle";
-                })
-            )
-        }else {
-            setMsgs(
-                allmsgs
-            )
-        }
-    }
+    // const setCheck2 = (checked) =>{
+    //     if(checked){
+    //         setMsgs(
+    //             allmsgs.filter((o)=>{
+    //                 return o.size =  "M";
+    //             })
+    //         )
+    //     }else {
+    //         setMsgs(
+    //             allmsgs
+    //         )
+    //     }
+    // }
 
     
-    const setCheck5 = (checked) =>{
-        if(checked){
-            setMsgs(
-                allmsgs.filter((o)=>{
-                    return o.breed =  "Pomeranian";
-                })
-            )
-        }else {
-            setMsgs(
-                allmsgs
-            )
-        }
-    }
+    // const setCheck3 = (checked) =>{
+    //     if(checked){
+    //         setMsgs(
+    //             allmsgs.filter((o)=>{
+    //                 return o.size =  "L";
+    //             })
+    //         )
+    //     }else {
+    //         setMsgs(
+    //             allmsgs
+    //         )
+    //     }
+    // }
+
+
+    // const setCheck4 = (checked) =>{
+    //     if(checked){
+    //         setMsgs(
+    //             allmsgs.filter((o)=>{
+    //                 return o.breed =  "Beagle";
+    //             })
+    //         )
+    //     }else {
+    //         setMsgs(
+    //             allmsgs
+    //         )
+    //     }
+    // }
 
     
-    const setCheck6 = (checked) =>{
-        if(checked){
-            setMsgs(
-                allmsgs.filter((o)=>{
-                    return o.breed =  "Husky";
-                })
-            )
-        }else {
-            setMsgs(
-                allmsgs
-            )
-        }
-    }
-    
-    const setCheck7 = (checked) =>{
-        if(checked){
-            setMsgs(
-                allmsgs.filter((o)=>{
-                    return o.breed =  "Sihba";
-                })
-            )
-        }else {
-            setMsgs(
-                allmsgs
-            )
-        }
-    }
+    // const setCheck5 = (checked) =>{
+    //     if(checked){
+    //         setMsgs(
+    //             allmsgs.filter((o)=>{
+    //                 return o.breed =  "Pomeranian";
+    //             })
+    //         )
+    //     }else {
+    //         setMsgs(
+    //             allmsgs
+    //         )
+    //     }
+    // }
 
     
-    const setCheck8 = (checked) =>{
-        if(checked){
-            setMsgs(
-                allmsgs.filter((o)=>{
-                    return o.breed =  "Other";
-                })
-            )
-        }else {
-            setMsgs(
-                allmsgs
-            )
-        }
-    }
+    // const setCheck6 = (checked) =>{
+    //     if(checked){
+    //         setMsgs(
+    //             allmsgs.filter((o)=>{
+    //                 return o.breed =  "Husky";
+    //             })
+    //         )
+    //     }else {
+    //         setMsgs(
+    //             allmsgs
+    //         )
+    //     }
+    // }
+    
+    // const setCheck7 = (checked) =>{
+    //     if(checked){
+    //         setMsgs(
+    //             allmsgs.filter((o)=>{
+    //                 return o.breed =  "Sihba";
+    //             })
+    //         )
+    //     }else {
+    //         setMsgs(
+    //             allmsgs
+    //         )
+    //     }
+    // }
 
-    const setCheck9 = (checked) =>{
-        if(checked){
-            setMsgs(
-                allmsgs.filter((o)=>{
-                    return o.progress =  "Pending";
-                })
-            )
-        }else {
-            setMsgs(
-                allmsgs
-            )
-        }
-    }
+    
+    // const setCheck8 = (checked) =>{
+    //     if(checked){
+    //         setMsgs(
+    //             allmsgs.filter((o)=>{
+    //                 return o.breed =  "Other";
+    //             })
+    //         )
+    //     }else {
+    //         setMsgs(
+    //             allmsgs
+    //         )
+    //     }
+    // }
 
-    const setCheck10 = (checked) =>{
-        if(checked){
-            setMsgs(
-                allmsgs.filter((o)=>{
-                    return o.progress =  "In Progress";
-                })
-            )
-        }else {
-            setMsgs(
-                allmsgs
-            )
-        }
-    }
+    // const setCheck9 = (checked) =>{
+    //     if(checked){
+    //         setMsgs(
+    //             allmsgs.filter((o)=>{
+    //                 return o.progress =  "Pending";
+    //             })
+    //         )
+    //     }else {
+    //         setMsgs(
+    //             allmsgs
+    //         )
+    //     }
+    // }
 
-    const setCheck11 = (checked) =>{
-        if(checked){
-            setMsgs(
-                allmsgs.filter((o)=>{
-                    return o.progress =  "Completed";
-                })
-            )
-        }else {
-            setMsgs(
-                allmsgs
-            )
-        }
-    }
+    // const setCheck10 = (checked) =>{
+    //     if(checked){
+    //         setMsgs(
+    //             allmsgs.filter((o)=>{
+    //                 return o.progress =  "In Progress";
+    //             })
+    //         )
+    //     }else {
+    //         setMsgs(
+    //             allmsgs
+    //         )
+    //     }
+    // }
+
+    // const setCheck11 = (checked) =>{
+    //     if(checked){
+    //         setMsgs(
+    //             allmsgs.filter((o)=>{
+    //                 return o.progress =  "Completed";
+    //             })
+    //         )
+    //     }else {
+    //         setMsgs(
+    //             allmsgs
+    //         )
+    //     }
+    // }
 
 
     // const [clickedButton, setClicked] = useState(null);
 
-    // const [check1, setCheck1] = useState(false);
-    // const [check2, setCheck2] = useState(false);
-    // const [check3, setCheck3] = useState(false);
-    // const [check4, setCheck4] = useState(false);
-    // const [check5, setCheck5] = useState(false);
-    // const [check6, setCheck6] = useState(false);
-    // const [check7, setCheck7] = useState(false);
-    // const [check8, setCheck8] = useState(false);
-    // const [check9, setCheck9] = useState(false);
-    // const [check10, setCheck10] = useState(false);
-    // const [check11, setCheck11] = useState(false);
+    const [check1, setCheck1] = useState(false);
+    const [check2, setCheck2] = useState(false);
+    const [check3, setCheck3] = useState(false);
+    const [check4, setCheck4] = useState(false);
+    const [check5, setCheck5] = useState(false);
+    const [check6, setCheck6] = useState(false);
+    const [check7, setCheck7] = useState(false);
+    const [check8, setCheck8] = useState(false);
+    const [check9, setCheck9] = useState(false);
+    const [check10, setCheck10] = useState(false);
+    const [check11, setCheck11] = useState(false);
     
     
     // useEffect(()=>{
@@ -349,12 +349,12 @@ const FilterBox = ({onMenuExpand, width, height, name, bgcolor, text, clickedBut
             </div>
         </InputRow>
         <div className="button">
-        <ApplyButton onClick={()=>{
+        {/* <ApplyButton onClick={()=>{
                 clickedButton();
-            }} width={width} height={height} bgcolor={bgcolor}>Apply</ApplyButton>
-            {/* <ApplyButton onClick={()=>{
-                clickedButton(check1, check2, check3, check4, check5, check6, check7, check8, check9, check10);
             }} width={width} height={height} bgcolor={bgcolor}>Apply</ApplyButton> */}
+            <ApplyButton onClick={()=>{
+                clickedButton(check1, check2, check3, check4, check5, check6, check7, check8, check9, check10, check11);
+            }} width={width} height={height} bgcolor={bgcolor}>Apply</ApplyButton>
         </div>
     </FilterBtnBox>
 };
